@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Misty Mountain LLC</title>
+
+</head>
+
+
+<body>
+    <header>
+        <nav>
+            <ul class="menu">
+                <li class="menu-item" onclick="showMainContent('home')">Home</li>
+                <li class="menu-item" id="scamsLink" onclick="showMainContent('scams')">Scams</li>
+                <li class="menu-item" id="internetLink" onclick="showMainContent('internet')">Internet Security</li>
+                <li class="menu-item" ID="windowsLink" onclick="showMainContent('windows')">Windows security</li>
+                <li class="menu-item" ID="linuxLink" onclick="showMainContent('linux')">Going to Linux</li>
+                <li class="menu-item" ID='aboutLink' onclick="showMainContent('about')">About Me</li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main>
+        <div id="home" class="content-section active">
+            <h1>Welcome to Misty Mountain LLC </h1>
+            <p>This web site is ideas about being safe in the digital world. </p>
+        </div>
+        <div id="scams" class="content-section">
+            <h1>Our scam section</h1>
+            <p>Explore the services we offer.</p>
+        </div>
+        <div id="windows" class="content-section">
+            <h1>Windows security </h1>
+            <p>Get in touch with us for more information.</p>
+        </div>
+        <div id="internet" class="content-section">
+            <h1>Internet security tips </h1>
+            <p>This is a temporary page and is a work in progress </p>
+        </div>
+        <div id="linux" class="content-section">
+            <h1>Linux excuse</h1>
+        </div>
+        <div id="about" class="content-section">
+            <h1>I am Robert and I currently write code for fun.</h1>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy;copyright 2021 -
+            <script>document.write(new Date().getFullYear())</script> Misty Mountain LLC. All rights reserved.
+        </p>
+    </footer>
+
+    <link rel="stylesheet" href="dist/style.css" type="text/css">
+    <script src="dist/main.js"></script>
+
+
+
+</body>
+
+</html>
