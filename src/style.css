@@ -26,26 +26,17 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  max-width: 769px;
+  max-width: 760px;
   background-image: linear-gradient(to bottom, #a8ddf4, #5fcaf8);
 
 }
 
-XXheader {
-  background-color: #1d6b9c;
-  color: white;
-  padding: 10px 0;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background-color: #1d6b9c;
-}
 
 footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-  padding: 2px 0;
+  padding: 1px;
   background-color: #1d6b9c;
   text-align: center;
   font-size: x-small;
@@ -61,7 +52,7 @@ nav ul {
   margin: 0;
   display: flex;
   justify-content: center;
-  background-color: #1d6b9c;
+
 }
 
 nav ul li {
@@ -98,7 +89,14 @@ nav ul li a {
   padding-right: 10px;
 }
 
-header {
+realheader {
+  background-color: #2793be;
+  border: 1px solid #008000;
+  padding: 10px;
+  text-align: center;
+}
+
+bogusheader {
   background-color: #2793be;
   border: 1px solid #008000;
   padding: 10px;
