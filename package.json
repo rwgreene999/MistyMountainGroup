@@ -16,11 +16,13 @@
     "copy-html": "copy src\\*.html dist\\",
     "copy-css2": "copy src/*.css dist/",
     "copy-images": "copy src\\images\\* dist\\images",
+    "copy-data": "copy src\\data\\* dist\\data",
     "watch-css": "nodemon --watch src -e css --exec \"npm run copy-css\"",
     "watch-html": "nodemon --watch src -e html --exec \"npm run copy-html\"",
     "watch-images": "nodemon --watch './src/images/*'--exec \"npm run copy-images\"",
+    "watch-data": "nodemon --watch './src/data/*'--exec \"npm run copy-data\"",
     "watch-ts": "tsc --watch --outDir dist",
-    "watchall": "npm-run-all --parallel watch-css watch-ts watch-html watch-images"
+    "watchall": "npm-run-all --parallel watch-css watch-ts watch-html watch-images watch-data"
   },
   "keywords": [],
   "author": "",
