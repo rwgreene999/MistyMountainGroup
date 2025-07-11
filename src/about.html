@@ -57,77 +57,37 @@
         code
         – it's about the connections we make along the way!</p>
 
-<!-- 
-    <div style="display: none;">
-        <form action="mailto:rwg24@MistyMountainGroup.com" method="POST" enctype="text/plain">
-            <h3>Contact Me using clients email</h3>
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="Name" required><br><br>
-
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="Email" required><br><br>
-
-            <label for="comment">Comment:</label><br>
-            <textarea id="comment" name="Comment" rows="4" cols="50" required></textarea><br><br>
-
-            <input type="submit" value="Send">
-        </form>
-    </div>
--->
 
 
+        <h3>Comments?</h3>
 <div id="contactForm">
-<form method="POST" action="sendmail.php">
-  <input type="text" name="name" placeholder="Your Name" required>
-  <input type="email" name="email" placeholder="Your Email" required>
-  <textarea name="message" placeholder="Your Message" required></textarea>
-  <button type="submit">Send</button>
+<form method="POST" action="sendit.php">
+
+    <label style="display:inline-block; width:180px; font-weight:bold;" for="name">Your Name</label>
+  <input type="text" name="name" placeholder="Your Name:" required>
+
+  <br>
+  <label style="display:inline-block; width:180px; font-weight:bold;" for="email">Your Email</label>
+  <input type="email" name="email" placeholder="Your Email:" required>
+
+  <br>
+  <label style="display:inline-block; width:180px; font-weight:bold;" for="message">Your comments:</label>
+  <textarea style="display:inline-block; width:400px; font-weight:bold;"  id="message" name="message" placeholder="Your Message" required></textarea>
+
+  <br>
+  <label style="display:inline-block; width:180px; font-weight:bold;" for="submit"></label>
+  <button id="submit" type="submit">Send</button>
 </form>
-</form>
+
 
 </div>
 
-    <!--
-<div style="display: inline-block; width: 40%; vertical-align: top; border: 1px solid #228B22; padding: 1%;">
-
-    <form id="contactForm">
-        <h2>Test contact using server SMTP</h2>
-        <label for="name">Your Name:</label>
-        <input type="text" id="name" name="name"><br>
-        <label for="email">Your Email:</label>
-        <input type="email" id="email" name="email"><br>
-        <label for="message">Message:</label><br>
-        <textarea id="message" name="message" rows="4" cols="50"></textarea><br>
-        <input type="submit" value="Submit" onclick="sendMail()">
-    </form>
-    <script>
-
-        function sendMail() {
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function () {
-                if (this.readyState == 4 && this.status == 200) {
-                    document.getElementById("contactForm").innerHTML = "Thank you for contacting me!";
-                }
-            };
-            xhttp.open("POST", "email.php", true);
-            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            var name = document.getElementById("name").value;
-            var email = document.getElementById("email").value;
-            var message = document.getElementById("message").value;
-            xhttp.send("name=" + name + "&email=" + email + "&message=" + message);
-
-
-
-        }
-    </script>
-</div>
--->
-
-    <div style="display: inline-block; width: 20%; vertical-align: top; border: 1px solid #228B22; padding: 1%;">
-        <p style="font-style: italic; font-size: smaller;">This above comments is written by Perplexity. I skectched
-            some
-            comments about my life and asked it to write it better. This is what I got! A lot better than I can
-            write
+    
+<br><br><br>
+    <div style="display: inline-block; width: 80%; vertical-align: top; border: 1px solid #228B22; padding: 1%;">
+        <p style="font-style: italic; font-size: smaller;">Most of the above comments about me was written by Perplexity. I skectched
+            out the outline of my history and asked it to write it up better. This is what I got! A lot better than I can
+            write, cause i am still working on those people skills! :)
             it.<br>-rwg
         </p>
     </div>
