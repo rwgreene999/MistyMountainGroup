@@ -3,8 +3,8 @@
 
 const message: string = "Hello, TypeScript! 8.a";
 console.log(message);
+turnOffSections();
 goPersonal();
-
 
 
 
@@ -48,12 +48,13 @@ function isDOMReady(): boolean {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  addMenuClickHandler('interestingLink', 'interesting', 'interesting.html');
   addMenuClickHandler('windowsLink', 'windows', 'windows.html');
   addMenuClickHandler('linuxLink', 'linux', 'whylinux.html');
-  addMenuClickHandler('aboutLink', 'about', 'about.html');
   addMenuClickHandler('internetLink', 'internet', 'internet.html');
   addMenuClickHandler('scamsLink', 'scams', 'scams.html');
+  addMenuClickHandler('interestingLink', 'interesting', 'interesting.html');
+  addMenuClickHandler('windowsToolsLink', 'windowsTools', 'windowsTools.html');
+  addMenuClickHandler('aboutLink', 'about', 'about.html');
   handleURLQuery();
 
 });
@@ -80,6 +81,11 @@ function handleURLQuery() {
     if (key === 'windows') {
       document.getElementById('windowsLink')?.click();
     }
+
+    if (key === 'windowsTools') {
+      document.getElementById('windowsToolsLink')?.click();
+    }
+
     if (key === 'linux') {
       document.getElementById('linuxLink')?.click();
     }
@@ -187,15 +193,35 @@ function showContents(linkID: string, divID: string, htmlFile: string) {
 }
 
 
-
-function goSafety() {
+function turnOffSections() {
 
   const personalStuffElements = document.querySelectorAll('.personalStuff') as NodeListOf<HTMLElement>;
   const internetSafetyStuffElements = document.querySelectorAll('.internetSafetyStuff') as NodeListOf<HTMLElement>;
+  const interestingThings = document.querySelectorAll('.interestingThingsStuff') as NodeListOf<HTMLElement>;
 
   personalStuffElements.forEach((element) => {
     element.style.display = 'none';
+
   });
+
+
+  internetSafetyStuffElements.forEach((element) => {
+    element.style.display = 'none';
+  });
+
+  interestingThings.forEach((element) => {
+    element.style.display = 'none';
+  });
+
+
+}
+
+
+function goSafety() {
+
+  turnOffSections();
+  const internetSafetyStuffElements = document.querySelectorAll('.internetSafetyStuff') as NodeListOf<HTMLElement>;
+
   internetSafetyStuffElements.forEach((element) => {
     element.style.display = 'initial';
   });
@@ -204,19 +230,24 @@ function goSafety() {
 
 function goPersonal() {
 
+  turnOffSections();
   const personalStuffElements = document.querySelectorAll('.personalStuff') as NodeListOf<HTMLElement>;
-  const internetSafetyStuffElements = document.querySelectorAll('.internetSafetyStuff') as NodeListOf<HTMLElement>;
 
   personalStuffElements.forEach((element) => {
     element.style.display = 'initial';
   });
-  internetSafetyStuffElements.forEach((element) => {
-    element.style.display = 'none';
-  });
 
 }
 
+function goInterestingThings() {
 
+  turnOffSections();
+  const interestingThingsStuffElements = document.querySelectorAll('.interestingThingsStuff') as NodeListOf<HTMLElement>;
+
+  interestingThingsStuffElements.forEach((element) => {
+    element.style.display = 'initial';
+  });
+}
 
 
 function loadQuotes(): Promise<any> {

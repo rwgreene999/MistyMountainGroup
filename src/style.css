@@ -174,3 +174,35 @@ bogusheader {
   }
 
 }
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.name {
+  flex: 1;
+  font-weight: bold;
+
+}
+
+.description {
+  flex: 2;
+  padding-left: 1rem;
+
+}
+
+
+.Originalname {
+  flex: 1;
+  font-weight: bold;
+  color: #333;
+}
+
+.Originaldescription {
+  flex: 2;
+  padding-left: 1rem;
+  color: #555;
+}
