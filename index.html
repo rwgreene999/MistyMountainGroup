@@ -25,8 +25,7 @@
             <ul class="menu">                
                 <li class="menu-item" onclick="showMainContent('home'); goPersonal();">Home</li>                
 
-                <li  class="menu-item" 
-                        onclick="goSafety();">Internet Safety 
+                <li  class="menu-item" onclick="goSafety();">Internet Safety 
                     <ul class="submenu">
                         <li class="menu-item internetSafetyStuff" id="scamsLink" onclick="showMainContent('scams');">Scams</li>
                         <li class="menu-item internetSafetyStuff" id="internetLink" onclick="showMainContent('internet')">Internet safety</li>
@@ -34,7 +33,12 @@
                         <li class="menu-item internetSafetyStuff" id="linuxLink" onclick="showMainContent('linux')">Going To Linux</li>
                     </ul>
                 </li>
-                <li class="menu-item personalStuff" id="interestingLink" onclick="showMainContent('interesting')">Interesting Things</li>
+                <li class="menu-item" onclick="goInterestingThings();">Interesting Things
+                    <ul class="submenu">
+                        <li class="menu-item interestingThingsStuff" id="windowsToolsLink" onclick="showMainContent('windowsTools');">Windows tools</li>
+                        <li class="menu-item interestingThingsStuff" id="interestingLink" onclick="showMainContent('interesting')">Interesting Things</li>
+                    </ul>
+                </li>
                 <li class="menu-item personalStuff" ID='aboutLink' onclick="showMainContent('about')">About Me</li>
             </ul>
             
@@ -49,12 +53,9 @@
             <p>I am Robert, owner of Misty Mountain LLC.  I made my living with Misty Mountain contracting my software development services to corporations.  My company is a small business and I only consider occasional short term gigs.  But I am a lifelong learner, but I still enjoy writing code for fun.                  
             </p>
             <p> I intend this to be a fairly active website as I discover interesting things on the Internet or privacy and security related things that I think everyone should know about In the digital world.</p>
+        </div>
 
-        </div>
-        <div id="interesting" class="content-section">
-            <h1>Our interesting things section</h1>
-            <p>items I find interesting</p>
-        </div>
+
         <div id="internetSafety" class="content-section">
             <h1>Internet Safety ideas</h1>
             <p>Internet safety ideas for everyone.  In our digital lives we have to be very careful about what information we provide to others.  So in this Internet Safety section I've added my tips How to be a little safer in the digital world.
@@ -62,20 +63,32 @@
             </p>
             <p>Press home to return to the main menu</p>
         </div>
-        <div id="scams" class="content-section">
-           
+
+        <div id="scams" class="content-section">           
         </div>
-        <div id="windows" class="content-section">
-            
+
+        <div id="windows" class="content-section">    
         </div>
-        <div id="internet" class="content-section">
-            
+
+        <div id="internet" class="content-section">            
         </div>
+
         <div id="linux" class="content-section">
+            linus things 
         </div>
-        <div id="about" class="content-section">
-   
+
+        <div id="windowsTools" class="content-section">
+            windows tools section 
         </div>
+
+        <div id="interesting" class="content-section">
+            <h1>Our interesting things section</h1>
+            <p>items I find interesting</p>
+        </div>
+
+        <div id="about" class="content-section">   
+        </div>
+
     </main>
 
     <footer>
