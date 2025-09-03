@@ -1,4 +1,3 @@
-// From Nov29,24
 // quotes dont work
 
 const message: string = "Hello, TypeScript! 8.a";
@@ -256,23 +255,72 @@ function loadQuotes(): Promise<any> {
 }
 
 
-function getRandomQuote(): Promise<any> {
-  return loadQuotes().then(quotes => {
-    const randomIndex = Math.floor(Math.random() * quotes.length);
-    return quotes[randomIndex];
+function GeneratedgetRandomQuote(uri: string): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const jsCode = `
+      fetch('${uri}')
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.error(error));
+    `;
+    resolve(jsCode);
   });
 }
 
-function getRandomQuoteFromServer(): Promise<any> {
+
+
+function getRandomQuoteLocally(): Promise<any> {
 
   return fetch('http://localhost:3000/quote')
-    .then(response => response.json());
+    .then(response => response.json())
+    .then(data => data)
+    .catch(error => {
+      console.error(error);
+      return {
+        Comment: "Sorry, quote server appears to be down.",
+        Author: ""
+      };
+    });
 };
 
 
 
+function getRandomQuote(): Promise<any> {
+
+  return fetch('https://MistyMountainSoftware.com/quote')
+    .then(response => response.json())
+    .then(data => data)
+    .catch(error => {
+      console.error(error);
+      return {
+        Comment: "Sorry, quote server appears to be down.",
+        Author: ""
+      };
+    });
+};
+
+
 
 function getRandomQuoteAndUpdateTextArea() {
+  const output = document.getElementById('quoteOutput') as HTMLParagraphElement;
+  const cite = document.getElementById('quoteCite');
+  output.innerHTML = "";
+  cite!.textContent = "";
+
+  getRandomQuote().then(quote => {
+    console.log("in then: " + quote);
+    output.innerHTML = quote.Comment;
+    if (quote.Author.length > 0) {
+      cite!.textContent = `Citation: ${quote.Author}`;
+    } else {
+      cite!.textContent = '';
+    }
+    // document.getElementById('quoteOutput').innerHTML = `${quote.Comment}\n-- ${quote.Author}`;
+  });
+}
+
+
+function OriginalgetRandomQuoteAndUpdateTextArea() {
   getRandomQuote().then(quote => {
     const output = document.getElementById('quoteOutput') as HTMLParagraphElement;
     const cite = document.getElementById('quoteCite');
