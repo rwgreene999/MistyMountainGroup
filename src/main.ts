@@ -1,9 +1,10 @@
 // quotes dont work
 
 const message: string = "Hello, TypeScript! 8.a";
-console.log(message);
-turnOffSections();
-goPersonal();
+const startTime = new Date();
+console.log(message + ' started at ' + startTime.toLocaleString());
+turnOffMenuSections();
+goPersonalMenus();
 
 
 
@@ -15,8 +16,10 @@ function writeStarted() {
 
 
 function showExtended(divTag: string) {
+  console.log('showExtended:', divTag);
   const lorem = document.getElementById(divTag);
   if (lorem) {
+    console.log('lorem showing ', lorem);
     lorem.style.display = lorem.style.display === "block" ? "none" : "block";
   }
 }
@@ -26,8 +29,10 @@ function showMainContent(sectionId: string): void {
   // Hide all content sections
   const sections = document.getElementsByClassName('content-section');
   Array.from(sections).forEach((section) => section.classList.remove('active'));
+
   // Show the selected content section
   const selectedSection = document.getElementById(sectionId);
+
   if (selectedSection) {
     selectedSection.classList.add('active');
   }
@@ -105,6 +110,7 @@ function addMenuClickHandler(linkID: string, divID: string, htmlFile: string): v
 
     theLink.addEventListener('click', (e: Event) => {
       e.preventDefault();
+      e.stopPropagation();
       showContents(linkID, divID, htmlFile);
 
 
@@ -136,14 +142,11 @@ function addMenuClickHandler(linkID: string, divID: string, htmlFile: string): v
 
 
 function showContents(linkID: string, divID: string, htmlFile: string) {
-  console.log('showContents', linkID, divID, htmlFile);
 
   const theLink: HTMLElement | null = document.getElementById(linkID);
   const theContent: HTMLElement | null = document.getElementById(divID);
 
   if (theLink && theContent) {
-
-    console.log(`gonna load divID: ${divID} file: ${htmlFile}`);
 
     fetch("dist/" + htmlFile + "?t=" + Date.now())
       .then((response: Response) => {
@@ -153,12 +156,7 @@ function showContents(linkID: string, divID: string, htmlFile: string) {
         return response.text();
       })
       .then((data: string) => {
-
-        console.log(`got data len=${data.length}`);
-
         theContent.innerHTML = data;
-        console.log(`loaded`);
-
       })
       .catch((error: Error) => {
         theContent.innerHTML = `Error loading content: ${error.message}`;
@@ -192,7 +190,7 @@ function showContents(linkID: string, divID: string, htmlFile: string) {
 }
 
 
-function turnOffSections() {
+function turnOffMenuSections() {
 
   const personalStuffElements = document.querySelectorAll('.personalStuff') as NodeListOf<HTMLElement>;
   const internetSafetyStuffElements = document.querySelectorAll('.internetSafetyStuff') as NodeListOf<HTMLElement>;
@@ -216,20 +214,21 @@ function turnOffSections() {
 }
 
 
-function goSafety() {
+function goSafetyMenus() {
 
-  turnOffSections();
+  turnOffMenuSections();
   const internetSafetyStuffElements = document.querySelectorAll('.internetSafetyStuff') as NodeListOf<HTMLElement>;
 
   internetSafetyStuffElements.forEach((element) => {
     element.style.display = 'initial';
   });
+};
 
-}
 
-function goPersonal() {
 
-  turnOffSections();
+function goPersonalMenus() {
+
+  turnOffMenuSections();
   const personalStuffElements = document.querySelectorAll('.personalStuff') as NodeListOf<HTMLElement>;
 
   personalStuffElements.forEach((element) => {
@@ -238,9 +237,9 @@ function goPersonal() {
 
 }
 
-function goInterestingThings() {
+function goInterestingThingsMenu() {
 
-  turnOffSections();
+  turnOffMenuSections();
   const interestingThingsStuffElements = document.querySelectorAll('.interestingThingsStuff') as NodeListOf<HTMLElement>;
 
   interestingThingsStuffElements.forEach((element) => {
@@ -308,7 +307,6 @@ function getRandomQuoteAndUpdateTextArea() {
   cite!.textContent = "";
 
   getRandomQuote().then(quote => {
-    console.log("in then: " + quote);
     output.innerHTML = quote.Comment;
     if (quote.Author.length > 0) {
       cite!.textContent = `Citation: ${quote.Author}`;
@@ -335,7 +333,6 @@ function OriginalgetRandomQuoteAndUpdateTextArea() {
 }
 
 function changeGetQuoteWords() {
-  console.log('changeGetQuoteWords');
   const getQuoteButton = document.getElementById('getQuote') as HTMLButtonElement;
   getQuoteButton.textContent = 'Get Another Quote';
 }

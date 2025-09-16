@@ -7,7 +7,7 @@
     <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>Misty Mountain LLC</title>
+    <title>Misty Mountain Info</title>
 
 </head>
 
@@ -22,26 +22,38 @@
         </div>
 
         <nav>
-            <ul class="menu">                
-                <li class="menu-item" onclick="showMainContent('home'); goPersonal();">Home</li>                
+            <ul class="menu">
 
-                <li  class="menu-item" onclick="goSafety();">Internet Safety 
+                <li class="menu-item" onclick="showMainContent('home'); goPersonalMenus();">Home</li>
+
+                <li class="menu-item " onclick="showMainContent('internetSafety');
+                        goSafetyMenus();">Internet Safety
                     <ul class="submenu">
-                        <li class="menu-item internetSafetyStuff" id="scamsLink" onclick="showMainContent('scams');">Scams</li>
-                        <li class="menu-item internetSafetyStuff" id="internetLink" onclick="showMainContent('internet')">Internet safety</li>
-                        <li class="menu-item internetSafetyStuff" id="windowsLink" onclick="showMainContent('windows')">Windows security</li>
-                        <li class="menu-item internetSafetyStuff" id="linuxLink" onclick="showMainContent('linux')">Going To Linux</li>
+                        <li class="menu-item internetSafetyStuff" id="scamsLink" onclick="showMainContent('scams');">
+                            Scams</li>
+                        <li class="menu-item internetSafetyStuff" id="internetLink"
+                            onclick="showMainContent('internet')">Internet safety</li>
+                        <li class="menu-item internetSafetyStuff" id="windowsLink" onclick="showMainContent('windows')">
+                            Windows security</li>
+                        <li class="menu-item internetSafetyStuff" id="linuxLink" onclick="showMainContent('linux')">
+                            Going To Linux</li>
                     </ul>
                 </li>
-                <li class="menu-item" onclick="goInterestingThings();">Interesting Things
+
+                <li class="menu-item " onclick="showMainContent('interesting'); goInterestingThingsMenu();">
+                    Interesting Things
                     <ul class="submenu">
-                        <li class="menu-item interestingThingsStuff" id="windowsToolsLink" onclick="showMainContent('windowsTools');">Windows tools</li>
-                        <li class="menu-item interestingThingsStuff" id="interestingLink" onclick="showMainContent('interesting')">Interesting Things</li>
+                        <li class="menu-item interestingThingsStuff" id="windowsToolsLink"
+                            onclick="showMainContent('windowsTools');">Windows tools</li>
+                        <li class="menu-item interestingThingsStuff" id="interestingLink"
+                            onclick="showMainContent('interesting')">Interesting Things</li>
                     </ul>
                 </li>
+
                 <li class="menu-item personalStuff" ID='aboutLink' onclick="showMainContent('about')">About Me</li>
+
             </ul>
-            
+
         </nav>
     </header>
 
@@ -49,44 +61,86 @@
 
     <main>
         <div id="home" class="content-section active">
-            <h1>Welcome to my site, Misty Mountain</h1>
-            <p>I am Robert, owner of Misty Mountain LLC.  I made my living with Misty Mountain contracting my software development services to corporations.  My company is a small business and I only consider occasional short term gigs.  But I am a lifelong learner, but I still enjoy writing code for fun.                  
+            <h1>Welcome to my site</h1>
+            <p>
+                I am Robert.
+                I made a living contracting my software development services to corporations.
+                My company was is a small business and now I only consider occasional short term gigs.
+                But I am a lifelong learner, but I still enjoy writing code for fun.
             </p>
-            <p> I intend this to be a fairly active website as I discover interesting things on the Internet or privacy and security related things that I think everyone should know about In the digital world.</p>
+            <p>
+                I intend this site to be a fairly active website as I discover more interesting things and ideas on the
+                Internet. My focus is privacy and security related issues that I think everyone should know about In the
+                digital world.
+            </p>
+            <p>
+                Don't expect to memorize this all at once.  Read a small part and come back later for more.
+            </p>
+            <p>
+                As you wander around this site, if you see this icon 
+                <span class="popup-trigger">
+                    <i>ℹ️ </i>
+                    <span class="popup-content">
+                        a short message, with ouse you can hover over it, with phone click on and click off
+                    </span>
+                </span>
+                it is a short message, with ouse you can hover over it, with phone click on and clock off
+                </p>
+                <p>But of you click this: 
+                <button id="showHowClicksWorkExtended" class="mybutton" 
+                        onclick="showExtended('scamDetectionExtended')">ℹ️  Click me </button> 
+                        <div id="scamDetectionExtended" class="extendedComment">
+                            Click me for extended comments.  Click again to make this go away! 
+                        </div>
+                you can click it for more information on whatever the
+                subject is at the moment.
+                The ’Home’ button returns you to this page.
+                I you have suggestions or observations or comments, email me from the About section
+            </p>
+            <p>
+                There are no cookies or tracking on from this site.  Unless you send me an email from the 'About me' section I will never know you are here. 
+            </p>
         </div>
 
 
         <div id="internetSafety" class="content-section">
             <h1>Internet Safety ideas</h1>
-            <p>Internet safety ideas for everyone.  In our digital lives we have to be very careful about what information we provide to others.  So in this Internet Safety section I've added my tips How to be a little safer in the digital world.
-                <p><strong style="font-size: larger;">Pick from menu above.</strong>            </p>                
+            <p>
+                Internet safety ideas for everyone. In the menu above, you can find out about current “Scams” the bad
+                guys use, general “Internet Safety” ideas, securing your “Windows” system and a very geekish “Going to
+                Linux” as an option for privacy. </p>
+            <p>
+                Pick your area of interest and press ‘Home’ to return to the main menu.
             </p>
-            <p>Press home to return to the main menu</p>
+
         </div>
 
-        <div id="scams" class="content-section">           
+        <div id="scams" class="content-section">
         </div>
 
-        <div id="windows" class="content-section">    
+        <div id="windows" class="content-section">
         </div>
 
-        <div id="internet" class="content-section">            
+        <div id="internet" class="content-section">
         </div>
 
         <div id="linux" class="content-section">
-            linus things 
+            linus things
         </div>
 
         <div id="windowsTools" class="content-section">
-            windows tools section 
+            windows tools section
         </div>
 
         <div id="interesting" class="content-section">
             <h1>Our interesting things section</h1>
-            <p>items I find interesting</p>
+            <p>The menus above are things that we find interenting.  
+                there in no special order adn it changes as I discover new things.
+                Explore and have fun. 
+            </p>
         </div>
 
-        <div id="about" class="content-section">   
+        <div id="about" class="content-section">
         </div>
 
     </main>
