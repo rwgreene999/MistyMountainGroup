@@ -31,6 +31,10 @@ body {
 
 }
 
+h2 {
+  font-style: italic;
+}
+
 
 footer {
   position: fixed;
@@ -131,13 +135,29 @@ bogusheader {
   display: inline-block;
   background-color: #1895de;
   color: white;
-  padding: 10px 15px;
+  padding: 5px 3px;
   margin: 5px;
   border-radius: 5px;
   text-decoration: none;
   transition: background-color 0.3s, box-shadow 0.3s;
   cursor: pointer;
+  border: 1px solid #ccc;
 }
+
+.menu-item2 {
+  display: inline-block;
+  background-color: #1895de;
+  color: white;
+  padding: 5px 3px;
+  margin: 5px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  border: 1px solid #ccc;
+}
+
+
 
 .menu-item:hover {
   background-color: #105068;
