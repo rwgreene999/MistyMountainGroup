@@ -19,7 +19,6 @@ function showExtended(divTag: string) {
   console.log('showExtended:', divTag);
   const lorem = document.getElementById(divTag);
   if (lorem) {
-    console.log('lorem showing ', lorem);
     lorem.style.display = lorem.style.display === "block" ? "none" : "block";
   }
 }
@@ -39,6 +38,7 @@ function showMainContent(sectionId: string): void {
 }
 
 function isDOMReady(): boolean {
+  console.log('isDOMReady', new Date());
   return document.readyState === 'interactive' || document.readyState === 'complete';
 }
 
@@ -142,11 +142,11 @@ function addMenuClickHandler(linkID: string, divID: string, htmlFile: string): v
 
 
 function showContents(linkID: string, divID: string, htmlFile: string) {
-
   const theLink: HTMLElement | null = document.getElementById(linkID);
   const theContent: HTMLElement | null = document.getElementById(divID);
 
   if (theLink && theContent) {
+
 
     fetch("dist/" + htmlFile + "?t=" + Date.now())
       .then((response: Response) => {
@@ -161,31 +161,8 @@ function showContents(linkID: string, divID: string, htmlFile: string) {
       .catch((error: Error) => {
         theContent.innerHTML = `Error loading content: ${error.message}`;
       });
-
-    // theLink.addEventListener('click', (e: Event) => {
-    //   e.preventDefault();
-
-    //   fetch('dist/' + htmlFile)
-    //     .then((response: Response) => {
-    //       if (!response.ok) {
-    //         throw new Error('Network response was not ok');
-    //       }
-    //       return response.text();
-    //     })
-    //     .then((data: string) => {
-
-    //       console.log(`got data len=${data.length}`);
-
-    //       theContent.innerHTML = data;
-    //       console.log(`loaded`);
-
-    //     })
-    //     .catch((error: Error) => {
-    //       theContent.innerHTML = `Error loading content: ${error.message}`;
-    //     });
-    // });
   } else {
-    console.error(`Required DOM elements ${theLink}/ ${theLink} or ${theContent} not found`);
+    console.error(`Required DOM elements ${linkID}/ ${divID} or ${theContent} not found`);
   }
 }
 

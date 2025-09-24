@@ -197,7 +197,7 @@ bogusheader {
 .description {
   flex: 2;
   padding-left: 1rem;
-
+  word-wrap: break-word;
 }
 
 
