@@ -64,38 +64,50 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+function handlePageSelection(selectedPage: string) {
+  console.log('hanlePageSelection', selectedPage);
+  if (selectedPage === 'scams') {
+    document.getElementById('scamsLink')?.click();
+  }
+  if (selectedPage === 'interesting') {
+    document.getElementById('interestingLink')?.click();
+  }
+  if (selectedPage === 'internet') {
+    document.getElementById('internetLink')?.click();
+  }
+  if (selectedPage === 'windows') {
+    document.getElementById('windowsLink')?.click();
+  }
+
+  if (selectedPage === 'windowsTools') {
+    document.getElementById('windowsToolsLink')?.click();
+  }
+
+  if (selectedPage === 'linux') {
+    document.getElementById('linuxLink')?.click();
+  }
+  if (selectedPage === 'about') {
+    document.getElementById('aboutLink')?.click();
+  }
+}
+
+
+
 function handleURLQuery() {
   // const queryParams = new URLSearchParams(window.location.search);
+
   const path = window.location.pathname;
+  console.log('handleURLQuery', path);
+
+
   // const queryParams = new URLSearchParams(path.substring(path.indexOf('?') + 1));
   const queryParams = new URLSearchParams(window.location.search);
   const segments = path.split('/').filter(Boolean);
 
+
   for (const [key, value] of queryParams.entries()) {
+    handlePageSelection(key);
 
-    if (key === 'scams') {
-      document.getElementById('scamsLink')?.click();
-    }
-    if (key === 'interesting') {
-      document.getElementById('interestingLink')?.click();
-    }
-    if (key === 'internet') {
-      document.getElementById('internetLink')?.click();
-    }
-    if (key === 'windows') {
-      document.getElementById('windowsLink')?.click();
-    }
-
-    if (key === 'windowsTools') {
-      document.getElementById('windowsToolsLink')?.click();
-    }
-
-    if (key === 'linux') {
-      document.getElementById('linuxLink')?.click();
-    }
-    if (key === 'about') {
-      document.getElementById('aboutLink')?.click();
-    }
   }
 
 
