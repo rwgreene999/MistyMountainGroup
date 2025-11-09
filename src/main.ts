@@ -66,6 +66,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function handlePageSelection(selectedPage: string) {
   console.log('hanlePageSelection', selectedPage);
+  if (selectedPage === 'test2') {
+    document.getElementById('scamsLink')?.click();
+  }
   if (selectedPage === 'scams') {
     document.getElementById('scamsLink')?.click();
   }
@@ -93,6 +96,7 @@ function handlePageSelection(selectedPage: string) {
 
 
 
+
 function handleURLQuery() {
   // const queryParams = new URLSearchParams(window.location.search);
 
@@ -104,10 +108,9 @@ function handleURLQuery() {
   const queryParams = new URLSearchParams(window.location.search);
   const segments = path.split('/').filter(Boolean);
 
-
-  for (const [key, value] of queryParams.entries()) {
-    handlePageSelection(key);
-
+  for (const segment of segments) {
+    console.log('handleURLQuery segment', segment);
+    handlePageSelection(segment);
   }
 
 
