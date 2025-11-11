@@ -1,172 +1,254 @@
 <article>
-    <h1>Essential Windows Computer Security Guide</h1>
+    <h1>Essential Microsoft Windows Computer Security Guide</h1>
 
 
-    <h2>Windows Security: Your Built-in Defender</h2>
-    <p>Microsoft's "Windows Security" is a free, built-in tool that provides comprehensive protection for your Windows
-        machine.
-        It offers:</p>
-    <ul>
-        <li>Anti-virus and threat protection</li>
-        <li>Firewall</li>
-        <li>Device protection</li>
-        <li>Performance monitoring</li>
-        <li>A few other services</li>
-    </ul>
+    <div comment="Windows Security: Your Built-in Defender">
+        <h2>Windows Security: Your Built-in Defender</h2>
+        <p>Microsoft's "Windows Security" is a free, built-in tool, that provides comprehensive protection for your
+            Windows
+            machine.</p>
+
+        <button id="showwindowsSecurity" class="mybutton" onclick="showExtended('windowsSecurity')">
+            ℹ️ More about antivirus and malware protection!
+        </button>
+
+        <div id="windowsSecurity" class='extendedComment'>
+            <p> Microsoft Security is a fine product for home and light business needs.
+                I find that many product reviewers do not review this when comparison to other anti-malware products.
+                It offers:
+            </p>
+
+            <ul>
+                <li>Anti-virus and anti-malware threat protection</li>
+                <li>Firewall</li>
+                <li>Device protection</li>
+                <li>Performance monitoring</li>
+                <li>A few other services</li>
+                <li> </li>
+                <li>It's free and just about as good as any other antimalware.</li>
+                <li><a href="https://www.tomsguide.com/us/best-antivirus,review-2588.html#section-the-best-antivirus-software-overall"
+                        target="_blank" rel="noopener noreferrer">
+                        ℹ️ Tom's Guide 2025 test and review </a> </li>
+
+            </ul>
+
+            <button id="showwindowsSecuritySecurity" class="mybutton" onclick="showExtended('windowsSecuritySecurity')">
+                ℹ️ What I do on my computers!
+            </button>
 
 
-    <button id="showWindowsDefenderSecurity" class="mybutton" onclick="showExtended('windowsDefenderSecurity')">
-        ℹ️ What I do on my computers!
-    </button>
+            <div id="windowsSecuritySecurity" class='extendedComment'>
+                <h3>My Windows Security Usage </h3>
+                <p>I’ve done this safely on multiple windows machines for years.
+                    Occasionally, I will download something that Defender tags as a problem.
+                    I trust that MS Security knows what it is doing.
+                    There are a few items that I keep which cause MS Security to react.
+                    These are special geek tools which the average person would not be using.
+                    If I trust the source, I’ll inform Defender to ignore items in those folders.
+                </p>
+
+                <p>
+                    Several times when I suspected I had a problem,
+                    I would download a free copy of
+                    <a href="https://www.malwarebytes.com/" target="_blank" rel="noopener noreferrer">MalwareBytes</a>.
+                    Only once has it found a problem that Defender missed.
+                    That problem was not a downloaded program, it was something running in my browser from a webpage
+                    whose tab I left open. Perhaps it was utilizing my GPU to mine bitcoins.
+                    Whatever, I killed the browser and Malwarebytes deleted a temporary file.
+                    It probably would have been deleted as soon as I closed the browser anyway.
+                    But I felt better!
+                </p>
+
+            </div>
 
 
-    <div id="windowsDefenderSecurity" class='extendedComment'>
-        <h3>My Windows Defender Usage </h3>
-        <p>I’ve done this safely on multiple windows machines for years.
-            Occasionally, I will download something that Defender tags as a problem.
-            I trust Defender knows what it is doing.
-            There are a few items that I keep which cause Defender to react.
-            These are special geek tools which the average person would not be using.
-            If I trust the source, I’ll inform Defender to ignore items in those folders.
-        </p>
-
-        <p>
-            Several times when I suspected I had a problem,
-            I would download a free copy of
-            <a href="https://www.malwarebytes.com/">MalwareBytes</a>.
-            Only once has it found a problem that Defender missed.
-            That problem was not a downloaded program, it was something running in my browser from a webpage
-            whose tab I left open.
-            That tab was utilizing my GPU to mine bitcoins.
-            I killed the browser and Bitwarden deleted a temporary file.
-            It probably would have been deleted as soon as I closed the browser anyway.
-            But I felt better!
-        </p>
-
+        </div>
     </div>
 
-    <h2>Removing Pre-installed Antivirus</h2>
 
-    <p>
-        New machines often come with pre-installed antivirus software from companies like Norton or McAfee.
-        In my experience and opinion, these are typically resource-intensive and free only for a limited time.
-        Once the free period ends, they want payments for continued service.
-        I recommend you remove these products and
-        and activate Windows Security from Microsoft instead.
-    </p>
-
-    <p>
-        The last time I did this, I simply uninstalled McAfee
-        (Settings -> Apps -> Installed Apps -> search for McAfee -> “…” pick uninstall )
-        Once I did this, Windows popped up and suggested I activate their protection software
-        which I did.
-    </p>
+    <div comment="Removing Pre-installed Antivirus">
+        <hr>
+        <h2>Removing Pre-installed Antivirus</h2>
+        <p>Just bought a computer? Mosty likely it comes with a pre-installed antivirus program. Consider removing it in
+            favor of Microsoft Security.</p>
+        <button id="showremovePreinstalledAntivirus" class="mybutton"
+            onclick="showExtended('removePreinstalledAntivirus')">
+            ℹ️ More about pre installed antivirus and malware
+        </button>
 
 
+        <div id="removePreinstalledAntivirus" class='extendedComment'>
+            <p>
+                New machines often come with pre-installed antivirus software from companies such as Norton or McAfee.
+                These companies pay to have their product preinstalled on new machines.
+                In my experience and in my opinion, these are typically resource-intensive and free only for a limited
+                time.
+                Once the free period ends, they want payments for continued service.
+                I recommend you remove these products and
+                and activate Windows Security from Microsoft instead.
+            </p>
 
-    <h2>BitLocker: Encrypt Your Drive Data</h2>
-    <span class="popup-trigger">
-        ℹ️ What is a 'drive' anyway????
-        <span class="popup-content">
-            A drive is a storage device like a HDD (hard drive) or SSD.
-            This is how your computer remembers everything after you power off
-        </span>
-    </span>
+            <p>
+                The last time I did computer, I simply uninstalled McAfee
+                (Settings -> Apps -> Installed Apps -> search for McAfee -> “…” pick uninstall )
+                Once I did this, Windows popped up and suggested I activate their Microsoft Security protection,
+                which I did.
+            </p>
+        </div>
+    </div>
 
-        <p>BitLocker
+    <div comment="BitLocker: Encrypt Your Drive Data">
+        <hr>
+        <h2>BitLocker: Encrypt Your Drive Data</h2>
+        <p>BitLocker is a technology to secure your drive from someone who steals your computer.
+            If it's turned on, you need to take some action.
+        </p>
+
+        <button id="showbitLocker" class="mybutton" onclick="showExtended('bitLocker')">
+            ℹ️ Learn About Bitlocker
+        </button>
+        <div id="bitLocker" class='extendedComment'>
             <span class="popup-trigger">
-                <strong>encryptsℹ️</strong>
+                ℹ️ What is a 'drive' anyway????
                 <span class="popup-content">
-                    Encryption is the process turning readable information into unreadable information, unless the key is known.                     
+                    A drive is a storage device like a HDD (hard drive) or SSD.
+                    This is how your computer remembers everything after you power off your machine
                 </span>
             </span>
-            your drive, securing your data even if your computer is stolen or if the drive is removed from
-            your
-            computer.
-        </p>
-
-        <p>
-            <i>Is it necessary for you to do this?</i>
-            If your computer was issued to you by a corporation, it is probably already done for you. If you keep
-            sensitive information on your computer, especially if you travel with your computer, you may consider
-            implementing this. One a windows machine, especially windows 11, the decryption key is installed in the TPM
-            hardware thingy on your computer. 
-        </p>
-
-<p><i>BTW: I heard that TMP chips, required by Windows 11, and many games, logs your unique ID with Microsoft every time you open it!</i></p>
 
 
-        <p>
-            A new computer with Windows installed may come to you already with BitLocker encryption. When you set up your computer
-            Microsoft encourages you to create a Microsoft account and at that point they may ask to encrypt your drive, or they may just encrypt it.  
-            You can change this later if you want encrypt or decrypt your drive. 
-        </p>
+            <p>BitLocker
+                <span class="popup-trigger">
+                    <strong>encryptsℹ️</strong>
+                    <span class="popup-content">
+                        Encryption is the process turning readable information into unreadable information, unless the
+                        <i>key</i> is known.
+                    </span>
+                </span>
+                your drive, securing your data even if your computer is stolen or if the drive is removed from
+                your computer.
+            </p>
 
-        <p>
-            Whether you choose to install Bitlocker, you should check the current status of BitLocker on your machine.
-            Check if the drive is encrypted. 
-            If it is active, you absolutely need to get the BitLocker Recovery Codes.
-            Those keys allow access to your hard drive even if
-            your machine fails, and you move your drive to another computer. 
-            Those Recovery Codes are also necessary if you
-            need to reinstall Windows on your machine.
-            At this writing, you log into the Microsoft account and access 
-            <a ref="https://account.microsoft.com/devices/recoverykey" target="_blank">https://account.microsoft.com/devices/recoverykey</a>
-        </p>
+            <p>
+                <i>Is it necessary for you to use BitLocker?</i>
+                If your computer was issued to you by a corporation, BitLocker is probably already installed/ You do not
+                need to worry about it, that's your companies responsibility. You most likely enter a password at the
+                power on of your computer before you really get started with a log in.
+            </p>
 
+            <p>
+                If this is your computer, you need to <b>consider the implications of BitLocker</b>.
+                If you keep sensitive information on your computer, especially if you travel with your computer, you may
+                consider
+                implementing Bitlocker.
+            </p>
+            <p>
+                A new computer with Windows installed may come to you already with BitLocker encryption. When you set up
+                your computer,
+                Microsoft encourages you to create a Microsoft account and at that point they may ask to encrypt your
+                drive,
+                or they may just encrypt it. The BitLocker 'unlock key' is attached to your Microsoft account.
+                You can add or remove BitLocker later if you want encrypt or decrypt your drive.
+            </p>
 
+            <p>If BitLocker is active on your machine, <b>you absolutely need to get the BitLocker Recovery Codes.</b>.
+                Those keys allow access to your hard drive even if
+                your machine fails, and you move your drive to another computer.
+                Those Recovery Codes are also necessary if you
+                need to reinstall Windows on your machine.
+                And sometimes, you just have to use the keys to get back into your machine.
+                To get these Recovery Codes you log into your Microsoft account and access
+                <a href="https://account.microsoft.com/devices/recoverykey" target="_blank"
+                    rel="noopener noreferrer">https://account.microsoft.com/devices/recoverykey</a>
+                Write down the recovery keys, and store them somewhere safe.
+            </p>
 
+            <p>To see if BitLocker is active on your machine, go to settings -> security & privacy -> BitLocker</p>
 
-        To use BitLocker:</p>
-        <ul>
-            <li>You'll need to use your Microsoft account</li>
-            <li>Open Bitlocker Drive ( settings -> search for bitlocker ) </li>
-            <li>If BitLocker is active, get your recovery codes (see above) </li>
-            <li>If you decide to BitLocker your drive, this is your spot.  Remember to back up your recovery codes (not on your machine).</li>
-        </ul>
-
-
-        <h2>Account Security</h2>
-        <p>Consider the following for your Windows machine's security:</p>
-        <ul>            
-            <li>Microsoft wants you to use their access for login to your computer</li>
-            <li>Be cautious with biometric security like Windows Hello</li>
-            <li><i>I am not a fan of biometrics, does your fingerprint work if you cut your hand? does you face
-                    work if you have a fever? If you are passout drunk, will you wake you the next day finding out
-                    someone used your face to log in and ordered 20 pizzas? </i></li>
-            <li>Will the law or the bad guy hold your phone or windows up to your face, log into your account and view your private comments?</li>
-            <li>Microsoft desires to backup your work to the cloud, which is unencrypted</li>
-                <li></li>
-                
-            <li>Solutions: </li>
+            TL:DR;</p>
             <ul>
-                <li>Create local accounts</li>
-                <li>Store important files like your bank account pdfs in your folders, not the default folders </li>
-                <li>At this writing, I don't know how to control OneDrive backups, so I uninstalled OneDrive! </li>
+                <li>You need to use your Microsoft account</li>
+                <li>Open Bitlocker Drive ( settings -> search for bitlocker ) </li>
+                <li>If BitLocker is active, get your recovery codes (see above) </li>
+                <li>If you decide to BitLocker your drive, this is your spot.</li>
+                <li>Remember to back up your recovery codes (not on your machine).</li>
             </ul>
-        </ul>
 
-
-        <h2>Browser Security</h2>
-        <p>Browsers are your gateway to the internet.   
-    <span class="popup-trigger">
-        ℹ️ What is a 'browser' anyway????
-        <span class="popup-content">
-            A browser is a program like Chrome or Safari than enables you to log into websites and access data, informaiton and entertainment. 
-        </span>
-    </span>
-        Most people in Widows spend the large majority of their time using a browser.  On phones we tends to use installed apps.  
-        When using browsers, you need to pay special attemtion to information sharing without your knowledge. 
-        <li>Go to our Web Browser Safety on this website <a href="/internet#DivWebBrowserInInternet"> here </a></li>
-        </p>
-
-
-
-        <div class="tip">
-            <strong>Security Tip:</strong> Be cautious of pop-ups requesting administrator permissions. Think twice
-            before granting software permission to make changes to your system.
         </div>
 
+        <hr>
+        <div comment="Account Security">
+            <h2>Account Security</h2>
+            <p>There are a few things to know about your computer's security</p>
+            <button id="showwindowsAccountSecurity" class="mybutton" onclick="showExtended('windowsAccountSecurity')">
+                ℹ️ More about your windows account security!
+            </button>
+
+            <div id="windowsAccountSecurity" class='extendedComment'>
+                <p>Consider the following for your Windows machine's security:</p>
+                <ul>
+                    <li>Microsoft wants you to use their access for login to your computer</li>
+                    <li>Be cautious with biometric security like Windows Hello</li>
+                    <li><i>I am not a fan of biometrics, does your fingerprint work if you cut your hand? does you face
+                            work if you have a fever? If you are passout drunk, will you wake you the next day finding
+                            out
+                            someone used your face to log in and ordered 20 pizzas? </i></li>
+                    <li>Will the law or the bad guy hold your phone or windows up to your face, log into your account
+                        and view your private comments?</li>
+                    <li>Microsoft desires to backup your work to the cloud, which is unencrypted</li>
+                    <li></li>
+
+                    <li>Solutions: </li>
+                    <ul>
+                        <li>Create local accounts</li>
+                        <li>Store important files like your bank account pdfs in your folders, not the default folders
+                        </li>
+                        <li>At this writing, I don't know how to control OneDrive backups, so I uninstalled OneDrive!
+                        </li>
+                    </ul>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div comment="Browser Security">
+        <hr>
+        <h2>Web Browser Security</h2>
+        <p>Web Browsers are your gateway to the internet. Don't leave it open.
+            <button id="showwebBrowserSecurity" class="mybutton" onclick="showExtended('webBrowserSecurity')">
+                ℹ️ More web browser security
+            </button>
+
+
+            <span class="popup-trigger">
+                ℹ️ What is a 'browser' anyway????
+                <span class="popup-content">
+                    A browser is a program like Chrome or Safari than enables you to log into websites and access data,
+                    informaiton and entertainment.
+                </span>
+            </span>
+
+
+        <div id="webBrowserSecurity" class='extendedComment'>
+            <p>
+            Most people in both Windows, Linux and Mac spend a large majority of their time using a browser.
+            On phones we tends to use installed apps whicnh have their own problems. 
+            When using browsers, you need to pay special attention to information sharing without your knowledge.
+            <li>Go to our "Web Browser Safety" on this page <a href="/internet"> here </a></li>
+            </p>
+
+            <div class="tip">
+                <strong>Security Tip:</strong> Be cautious of pop-ups requesting administrator permissions. Think twice
+                before granting software permission to make changes to your system.
+            </div>
+        </div>
+        
+    </div>
+
+    <div comment="Additional Resources">
+        <hr>
         <h2>Additional Resources</h2>
         <p>For more in-depth Windows security tips, consider checking out:</p>
         <ul>
@@ -178,13 +260,12 @@
                     rel="noopener noreferrer">Naomi Brockwell
                     TV
                     on YouTube</a></li>
-            </ur>
+        </ul>
 
-            <p>By following these guidelines, you can significantly improve the security of your Windows machine and
-                protect
-                your digital life.</p>
-          
-                
+        <p>By following these guidelines, you can significantly improve the security of your Windows machine and
+            protect
+            your digital life.</p>
+    </div>
 </article>
 <br>
 <br>
