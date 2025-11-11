@@ -4,7 +4,9 @@ const message: string = "Hello, TypeScript! 8.a";
 const startTime = new Date();
 console.log(message + ' started at ' + startTime.toLocaleString());
 turnOffMenuSections();
+preloadDataPages();
 goPersonalMenus();
+
 
 
 
@@ -43,12 +45,17 @@ function isDOMReady(): boolean {
 }
 
 
-// function preloadAndaddMenuClickHandler(linkID: string, divID: string, htmlFile: string) {
-//   // failed atttempt 
-//   showContents(linkID, divID, htmlFile);
-//   addMenuClickHandler(linkID, divID, htmlFile);
+function preloadDataPages() {
 
-// }
+  showContents('windowsLink', 'windows', 'windows.html');
+  showContents('linuxLink', 'linux', 'whylinux.html');
+  showContents('internetLink', 'internet', 'internet.html');
+  showContents('scamsLink', 'scams', 'scams.html');
+  showContents('interestingLink', 'interesting', 'interesting.html');
+  showContents('windowsToolsLink', 'windowsTools', 'windowsTools.html');
+  showContents('aboutLink', 'about', 'about.html');
+
+}
 
 
 document.addEventListener('DOMContentLoaded', () => {
