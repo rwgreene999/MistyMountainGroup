@@ -10,7 +10,6 @@ goPersonalMenus();
 
 
 
-
 function writeStarted() {
   console.log('writeStarted');
 }
@@ -336,3 +335,8 @@ function changeGetQuoteWords() {
   getQuoteButton.textContent = 'Get Another Quote';
 }
 
+function SetStyleMode(styleTheme: string) {
+  const link = document.getElementById('styleTheme') as HTMLLinkElement;
+  link?.setAttribute('href', 'dist/' + styleTheme);
+
+}
