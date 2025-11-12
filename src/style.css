@@ -93,20 +93,6 @@ nav ul li a {
   padding-right: 10px;
 }
 
-realheader {
-  background-color: #2793be;
-  border: 1px solid #008000;
-  padding: 10px;
-  text-align: center;
-}
-
-bogusheader {
-  background-color: #2793be;
-  border: 1px solid #008000;
-  padding: 10px;
-  text-align: center;
-}
-
 .popup-content {
   background-color: #87CEEB;
   display: none;
@@ -200,15 +186,32 @@ bogusheader {
   word-wrap: break-word;
 }
 
-
-.Originalname {
-  flex: 1;
-  font-weight: bold;
-  color: #333;
+/* Normal link */
+a {
+  color: blue;
+  /* sets the default link color */
 }
 
-.Originaldescription {
-  flex: 2;
-  padding-left: 1rem;
-  color: #555;
+/* Visited link */
+a:visited {
+  color: purple;
+  /* color after the link has been clicked */
+}
+
+/* Hover state */
+a:hover {
+  color: red;
+  /* color when the mouse hovers over the link */
+}
+
+/* Active (while clicking) */
+a:active {
+  color: orange;
+  /* color when the link is being clicked */
+}
+
+.box {
+  border: 1px solid #4111ee;
+  border-radius: 3px;
+  padding: 10px
 }
