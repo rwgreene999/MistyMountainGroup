@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 function handlePageSelection(selectedPage: string) {
-  console.log('hanlePageSelection', selectedPage);
+
   if (selectedPage === 'test2') {
     document.getElementById('scamsLink')?.click();
   }
@@ -89,6 +89,9 @@ function handlePageSelection(selectedPage: string) {
   }
 
   if (selectedPage === 'windowsTools') {
+    document.getElementById('windowsToolsLink')?.click();
+  }
+  if (selectedPage === 'tools') {
     document.getElementById('windowsToolsLink')?.click();
   }
 
