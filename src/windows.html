@@ -97,11 +97,64 @@
         </div>
     </div>
 
+    <div comment="Microsoft Recall ">
+        <hr>
+        <h2>Microsoft Recall, are you sure?</h2>
+        <p>Microsoft has introduced a produce called 'recall'.
+            This records your actions on your computer.
+            The stated purpose is to provide you with a history of your actions.
+            The secondary reason is to allow an AI learn how to help you in your daily chores.
+        </p>
+        <p>The question is, do you want Microsoft recording everything you do on your computer?
+        </p>
+        <button id="showRecall" class="mybutton" onclick="showExtended('bitLocker')">
+            ℹ️ Learn How to check and disable Recall
+        </button>
+
+        <div id="bitLocker" class='extendedComment'>
+            <p>The question is, do you want Microsoft recording everything you do on your computer?
+                This is a privacy issue.
+                If you are using a corporate computer, your company may require this feature.
+                If this is your personal computer, you need to decide if you want this feature.
+            </p>
+            <p> Is active on your computer it may be recording personal information such as 
+                searches you don't want known to other people or your password to various sites you visit. 
+                Additionally you need to consider where this information is being stored. The last time I checked Microsoft said it was stored on your computer. Do you have the ability to store screenshots from every five seconds for the last week on your computer? I need to say that at this time I have no real knowledge of how frequently they take the screenshots or how long of a history they maintain.
+            </p>
+            <p> Used to following the instructions to check if it's active and 
+                turn it off if want to block this invasion of your privacy
+            </p>
+            <ur>
+                <li>Open a CMD prompt in administration mode</li>
+                <li>to check Recall's current status, enter: 
+                    <br><strong>DISM /Online /Get-FeatureInfo /FeatureName:"Recall"</strong></li>
+                <li>to disable Recall enter: 
+                    <br><strong>DISM /Online /Disable-Feature /FeatureName:"Recall"</strong></li>
+                <li>to fully remove Recall enter: <br><strong>DISM /Online /Remove-Feature /FeatureName:"Recall"</strong> 
+                    <br>-or- 
+                    <br><strong>DISM /Online /Disable-Feature /FeatureName:"Recall" /Remove</strong>></li>
+                <li>This may disable and block Recall (backup your registry first), enter: 
+                    <br><strong>reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsAI" /v AllowRecallEnablement /t REG_DWORD /d 0 /f</strong></li>
+                    <li> </li>
+                <li>Restart your computer</li>
+                <li> </li>
+
+                <li>Note: Microsoft may change things, and even reinstall Recall during a security update, so recheck from time to time.  Also instructions might change.  This information is the best I can find on Dec 25, 2025</li>
+            </ur>
+
+        </div>
+
+
+
+    </div>
+
+
     <div comment="BitLocker: Encrypt Your Drive Data">
         <hr>
         <h2>BitLocker: Encrypt Your Drive Data</h2>
         <p>BitLocker is a technology to secure your drive from someone who steals your computer.
-            If it's turned on, you need to take some action.
+            If it is turned on (like on a new computer), you need to take some action. If it is not on, you may want to
+            consider turning it on.
         </p>
 
         <button id="showbitLocker" class="mybutton" onclick="showExtended('bitLocker')">
@@ -233,10 +286,10 @@
 
         <div id="webBrowserSecurity" class='extendedComment'>
             <p>
-            Most people in both Windows, Linux and Mac spend a large majority of their time using a browser.
-            On phones we tends to use installed apps whicnh have their own problems. 
-            When using browsers, you need to pay special attention to information sharing without your knowledge.
-            <li>Go to our "Web Browser Safety" on this page <a href="/internet"> here </a></li>
+                Most people in both Windows, Linux and Mac spend a large majority of their time using a browser.
+                On phones we tends to use installed apps whicnh have their own problems.
+                When using browsers, you need to pay special attention to information sharing without your knowledge.
+                <li>Go to our "Web Browser Safety" on this page <a href="/internet"> here </a></li>
             </p>
 
             <div class="tip">
@@ -244,7 +297,7 @@
                 before granting software permission to make changes to your system.
             </div>
         </div>
-        
+
     </div>
 
     <div comment="Additional Resources">
