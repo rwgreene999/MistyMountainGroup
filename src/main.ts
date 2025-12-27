@@ -194,7 +194,7 @@ function showContents(linkID: string, divID: string, htmlFile: string) {
 function turnOffMenuSections() {
 
   const personalStuffElements = document.querySelectorAll('.personalStuff') as NodeListOf<HTMLElement>;
-  const internetSafetyStuffElements = document.querySelectorAll('.internetSafetyStuff') as NodeListOf<HTMLElement>;
+  const digitalSafetyStuffElements = document.querySelectorAll('.digitalSafetyStuff') as NodeListOf<HTMLElement>;
   const interestingThings = document.querySelectorAll('.interestingThingsStuff') as NodeListOf<HTMLElement>;
 
   personalStuffElements.forEach((element) => {
@@ -203,7 +203,7 @@ function turnOffMenuSections() {
   });
 
 
-  internetSafetyStuffElements.forEach((element) => {
+  digitalSafetyStuffElements.forEach((element) => {
     element.style.display = 'none';
   });
 
@@ -215,12 +215,12 @@ function turnOffMenuSections() {
 }
 
 
-function goSafetyMenus() {
+function goDigitalMenus() {
 
   turnOffMenuSections();
-  const internetSafetyStuffElements = document.querySelectorAll('.internetSafetyStuff') as NodeListOf<HTMLElement>;
+  const digitalSafetyStuffElements = document.querySelectorAll('.digitalSafetyStuff') as NodeListOf<HTMLElement>;
 
-  internetSafetyStuffElements.forEach((element) => {
+  digitalSafetyStuffElements.forEach((element) => {
     element.style.display = 'initial';
   });
 };
