@@ -117,30 +117,92 @@
                 If you are using a corporate computer, your company may require this feature.
                 If this is your personal computer, you need to decide if you want this feature.
             </p>
-            <p> Is active on your computer it may be recording personal information such as 
-                searches you don't want known to other people or your password to various sites you visit. 
-                Additionally you need to consider where this information is being stored. The last time I checked Microsoft said it was stored on your computer. Do you have the ability to store screenshots from every five seconds for the last week on your computer? I need to say that at this time I have no real knowledge of how frequently they take the screenshots or how long of a history they maintain.
+            <p> Is active on your computer it may be recording personal information such as
+                searches you don't want known to other people or your password to various sites you visit.
+                Additionally you need to consider where this information is being stored. The last time I checked
+                Microsoft said it was stored on your computer. Do you have the ability to store screenshots from every
+                five seconds for the last week on your computer? I need to say that at this time I have no real
+                knowledge of how frequently they take the screenshots or how long of a history they maintain.
             </p>
-            <p> Used to following the instructions to check if it's active and 
+
+            <p>There are respected people with video channels that I watch and learn from. And some of them have said
+                there is nothing to worry about with Microsoft Recall. But my personal experience with Microsoft and
+                their invasive monitoring convinces me that this is something to worry about therefore I have provided
+                this information on how you can disable it if that's what you desire to do with your computer.</p>
+
+
+            <p>Use to following the instructions to check if it's active and
                 turn it off if want to block this invasion of your privacy
             </p>
-            <ur>
-                <li>Open a CMD prompt in administration mode</li>
-                <li>to check Recall's current status, enter: 
-                    <br><strong>DISM /Online /Get-FeatureInfo /FeatureName:"Recall"</strong></li>
-                <li>to disable Recall enter: 
-                    <br><strong>DISM /Online /Disable-Feature /FeatureName:"Recall"</strong></li>
-                <li>to fully remove Recall enter: <br><strong>DISM /Online /Remove-Feature /FeatureName:"Recall"</strong> 
-                    <br>-or- 
-                    <br><strong>DISM /Online /Disable-Feature /FeatureName:"Recall" /Remove</strong>></li>
-                <li>This may disable and block Recall (backup your registry first), enter: 
-                    <br><strong>reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsAI" /v AllowRecallEnablement /t REG_DWORD /d 0 /f</strong></li>
-                    <li> </li>
-                <li>Restart your computer</li>
-                <li> </li>
+            <ul>
+                <li>Open a CMD prompt in administration mode
+                    <button id="showHowToOpenCmd" class="mybutton" onclick="showExtended('HowToOpenCmd')">
+                        ℹ️ How to open a ADMIN CMD prompt!
+                    </button>
+                </li>
+                <div id="HowToOpenCmd" class='extendedComment'>
 
-                <li>Note: Microsoft may change things, and even reinstall Recall during a security update, so recheck from time to time.  Also instructions might change.  This information is the best I can find on Dec 25, 2025</li>
-            </ur>
+                    <article>
+                        <h3>Running Command Prompt as Administrator</h2>
+
+                            <ol>
+                                <li>
+                                    <h4>Enter 'cmd' in Windows Search</h4>
+                                    <p>Open the Windows search bar and type <strong>cmd</strong> to find the Command
+                                        Prompt application.</p>
+                                    <img src="dist/images/cmd1.png" alt="Typing cmd in Windows search"
+                                        style="max-width: 100%; height: auto;">
+                                </li>
+
+                                <li>
+                                    <h4>Click on 'Run as Administrator'</h4>
+                                    <p>Right-click on Command Prompt selectino<strong>Run as administrator</strong> to
+                                        open it with elevated privileges.</p>
+                                    <img src="dist/images/cmd2.png" alt="Running Command Prompt as administrator"
+                                        style="max-width: 100%; height: auto;">
+                                </li>
+                                <li>
+                                    <h4>Allow the app to make changes to your device</h4>
+                                    <p>Click <strong>Yes</strong> to allow elevated privileges.</p>
+                                    <img src="dist/images/cmd3.png" alt="Running Command Prompt as administrator"
+                                        style="max-width: 100%; height: auto;">
+                                </li>
+                                <li>
+                                    <h4>You can enter the system commands below in the black command box</h4>
+                                    <img src="dist/images/cmd4.png" alt="Running Command Prompt as administrator"
+                                        style="max-width: 100%; height: auto;">
+                                </li>
+                            </ol>
+                    </article>
+                </div>
+                <ul>
+                    &nbsp;
+                    <li>to check Recall's current status, enter:
+                        <br><strong>DISM /Online /Get-FeatureInfo /FeatureName:"Recall"</strong>
+                    </li>
+                    &nbsp;
+                    <li>to disable Recall enter:
+                        <br><strong>DISM /Online /Disable-Feature /FeatureName:"Recall"</strong>
+                    </li>
+                    &nbsp;
+                    <li>to fully remove Recall enter: <br><strong>DISM /Online /Remove-Feature
+                            /FeatureName:"Recall"</strong>
+                        <br>-or-
+                        <br><strong>DISM /Online /Disable-Feature /FeatureName:"Recall" /Remove</strong>>
+                    </li>
+                    &nbsp;
+                    <li>This may disable and block Recall (backup your registry first), enter:
+                        <br><strong>reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsAI" /v
+                            AllowRecallEnablement /t REG_DWORD /d 0 /f</strong>
+                    </li>
+                    &nbsp;
+                    <li>Restart your computer</li>
+                    &nbsp;
+
+                    <li>Note: Microsoft may change things, and even reinstall Recall during a security update, so
+                        recheck from time to time. Also instructions might change. This information is the best I can
+                        find on Dec 25, 2025</li>
+            </ul>
 
         </div>
 
