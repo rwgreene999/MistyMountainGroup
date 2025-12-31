@@ -10,12 +10,15 @@ Dec 31, 25
 * reduce example to popup 
 
 
+Dec 31, 25 
+* provide url line to set color 
+* Change base color to something else 
+
+
 Todos 
  
 In general 
 * change color to show the colors
-* provide url line to set color 
-* Change base color to something else 
 
 
 
