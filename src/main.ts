@@ -123,6 +123,9 @@ function handleURLQuery() {
 
   // const queryParams = new URLSearchParams(path.substring(path.indexOf('?') + 1));
   const queryParams = new URLSearchParams(window.location.search);
+  handleQueryParams(queryParams);
+
+  console.log('handleURLQuery params', Array.from(queryParams.entries()));
   const segments = path.split('/').filter(Boolean);
 
   for (const segment of segments) {
@@ -349,16 +352,24 @@ function changeGetQuoteWords() {
   getQuoteButton.textContent = 'Get Another Quote';
 }
 
-function SetStyleMode(styleTheme: string) {
-  const link = document.getElementById('styleTheme') as HTMLLinkElement;
-  link?.setAttribute('href', 'dist/' + styleTheme);
+function SetStyleMode(theme: string) {
+  console.log('SetStyleMode:', theme);
+  document.body.className = "";
+  if (theme !== "default") {
+    console.log
+    document.body.classList.add(`theme-${theme}`);
+  }
+
+
+  // const link = document.getElementById('styleTheme') as HTMLLinkElement;
+  // link?.setAttribute('href', 'dist/' + styleTheme);
 
 }
 
 function pickRandomInternetComment() {
   const textStrings = [
     "It's not that I have anything to hide, it's that  I  have nothing that  I want  to show  YOU !",
-    "Privacy is a dial, not a switch, Turn it to the level you feel safe at.",
+    "Privacy is a dial, not a switch. Turn it up to the level where you feel safe.",
     "The right most valued by all civilized men is the right to be left alone -- Supreme justice Lewis Brandeis",
     "Saying you have nothing to hide is no different than saying you don't care about free speech because you have nothing to say. -- Edward Snowden",
     "Privacy is not an option, and it shouldn't be the price we accept for just getting on the Internet. -- Gary Kovacs",
@@ -368,7 +379,9 @@ function pickRandomInternetComment() {
     "Bene vixit, bene qui latuit. (He has lived well, who has hidden well.) -- Latin Proverb",
     "The right to be let alone is indeed the beginning of all freedom -- William Douglas",
     "In our time, the symbol of state intrusion into the private life is the mandatory urine test. -- Christopher Hitchens",
-    "He who sacrifices privacy for convenience deserves neither.” -- Modern twist on Franklin"
+    "He who sacrifices privacy for convenience deserves neither.” -- Modern twist on Franklin",
+    "“If you have nothing to hide, you have nothing to fear” is the battle cry of every tyrant in history.",
+    "Privacy isn't about hiding; it's about dignity. -- Glenn Greenwaldd"
   ];
 
   const randomIndex = Math.floor(Math.random() * textStrings.length);
@@ -386,5 +399,17 @@ function updateInternetParagraph(selectedString: string) {
   internetDiv.appendChild(paragraph);
 }
 
+
+
+
+
+function handleQueryParams(queryParams: URLSearchParams) {
+  queryParams.forEach((value, key) => {
+    console.log(`handleQueryParams key=${key} value=${value}`);
+    if (key === 'theme') {
+      SetStyleMode(value);
+    }
+  });
+}
 
 
