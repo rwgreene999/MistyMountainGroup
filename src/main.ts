@@ -1,4 +1,4 @@
-// quotes dont work
+
 
 const message: string = "Hello, TypeScript! 8.a";
 const startTime = new Date();
@@ -6,7 +6,6 @@ console.log(message + ' started at ' + startTime.toLocaleString());
 turnOffMenuSections();
 preloadDataPages();
 goPersonalMenus();
-
 
 
 
@@ -18,9 +17,9 @@ function writeStarted() {
 
 function showExtended(divTag: string) {
   console.log('showExtended:', divTag);
-  const lorem = document.getElementById(divTag);
-  if (lorem) {
-    lorem.style.display = lorem.style.display === "block" ? "none" : "block";
+  const selectedID = document.getElementById(divTag);
+  if (selectedID) {
+    selectedID.style.display = selectedID.style.display === "block" ? "none" : "block";
   }
 }
 
@@ -36,6 +35,8 @@ function showMainContent(sectionId: string): void {
   if (selectedSection) {
     selectedSection.classList.add('active');
   }
+
+
 }
 
 function isDOMReady(): boolean {
@@ -65,7 +66,14 @@ document.addEventListener('DOMContentLoaded', () => {
   addMenuClickHandler('interestingLink', 'interesting', 'interesting.html');
   addMenuClickHandler('windowsToolsLink', 'windowsTools', 'windowsTools.html');
   addMenuClickHandler('aboutLink', 'about', 'about.html');
+  console.log('DOM fully loaded and parsed');
   handleURLQuery();
+
+
+  setInterval(() => {
+    const randomTextString = pickRandomInternetComment();
+    updateInternetParagraph(pickRandomInternetComment());
+  }, 15000);
 
 });
 
@@ -126,9 +134,12 @@ function handleURLQuery() {
 }
 
 
+
 function addMenuClickHandler(linkID: string, divID: string, htmlFile: string): void {
   const theLink: HTMLElement | null = document.getElementById(linkID);
   const theContent: HTMLElement | null = document.getElementById(divID);
+
+  console.log(`addMenuClickHandler linkID=${linkID} divID=${divID} htmlFile=${htmlFile}`);
 
   if (theLink && theContent) {
 
@@ -343,3 +354,37 @@ function SetStyleMode(styleTheme: string) {
   link?.setAttribute('href', 'dist/' + styleTheme);
 
 }
+
+function pickRandomInternetComment() {
+  const textStrings = [
+    "It's not that I have anything to hide, it's that  I  have nothing that  I want  to show  YOU !",
+    "Privacy is a dial, not a switch, Turn it to the level you feel safe at.",
+    "The right most valued by all civilized men is the right to be left alone -- Supreme justice Lewis Brandeis",
+    "Saying you have nothing to hide is no different than saying you don't care about free speech because you have nothing to say. -- Edward Snowden",
+    "Privacy is not an option, and it shouldn't be the price we accept for just getting on the Internet. -- Gary Kovacs",
+    "The more you share, the less you own. -- Unknown",
+    "All human beings have three lives: public, private, and secret. ― Gabriel García Márquez",
+    "I don't know why people are so keen to put the details of their private life in public; they forget that invisibility is a superpower -- Banksy",
+    "Bene vixit, bene qui latuit. (He has lived well, who has hidden well.) -- Latin Proverb",
+    "The right to be let alone is indeed the beginning of all freedom -- William Douglas",
+    "In our time, the symbol of state intrusion into the private life is the mandatory urine test. -- Christopher Hitchens",
+    "He who sacrifices privacy for convenience deserves neither.” -- Modern twist on Franklin"
+  ];
+
+  const randomIndex = Math.floor(Math.random() * textStrings.length);
+  const randomTextString = textStrings[randomIndex];
+  console.log('pickRandomInternetComment:', randomTextString);
+  return randomTextString;
+}
+
+function updateInternetParagraph(selectedString: string) {
+  const internetDiv = document.getElementById('rotateInternet') as HTMLElement;
+  if (!internetDiv) return; // Element not found — safely exit
+  internetDiv.innerHTML = '';
+  const paragraph = document.createElement('p');
+  paragraph.textContent = selectedString;
+  internetDiv.appendChild(paragraph);
+}
+
+
+
