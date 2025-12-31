@@ -1,0 +1,22 @@
+
+In internet security and privacy 
+Dec 31, 25 
+* Add rotating reason 
+    include https://www.youtube.com/watch?v=dgpzyJwuS-4&t=4s  as Dial not switch
+    "The right most valued by all civilized men is the right to be left alone" 
+    -- Supreme justice Lewis Brandeis 
+    Find a another quote 
+    https://www.youtube.com/watch?v=yRFeS72IM6M&t=289s    
+* reduce example to popup 
+
+
+Todos 
+ 
+In general 
+* change color to show the colors
+* provide url line to set color 
+* Change base color to something else 
+
+
+
+
