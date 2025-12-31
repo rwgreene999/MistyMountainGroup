@@ -3,10 +3,10 @@
 }
 
 .extendedComment {
-    background-color: #1e2a35;
-    /* dark slate background */
-    border: 2px solid #4caf50;
-    /* green accent */
+    background-color: #5fb7b2;
+    /* light teal */
+    border: 2px solid #146b6f;
+    /* medium teal */
     display: none;
     margin: 0 auto;
     max-width: 70vw;
@@ -18,7 +18,7 @@
 }
 
 body {
-    font-family: Corbel, Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 1.2em;
     margin-left: auto;
     margin-right: auto;
@@ -27,10 +27,10 @@ body {
     flex-direction: column;
     min-height: 100vh;
     max-width: 760px;
-    background-image: linear-gradient(to bottom, #1e2631, #1a1f24);
-    /* dark gradient */
-    color: #e0e0e0;
-    /* light text */
+    background-image: linear-gradient(to bottom, #0f4c4a, #146b6f);
+    /* dark → medium teal */
+    color: #e8f6f5;
+    /* very light teal text */
 }
 
 h2 {
@@ -42,11 +42,11 @@ footer {
     bottom: 0;
     width: 100%;
     padding: 1px;
-    background-color: #0d3c55;
-    /* deep navy */
+    background-color: #0f4c4a;
+    /* dark teal */
     text-align: center;
     font-size: x-small;
-    color: #f0f0f0;
+    color: white;
     max-width: 769px;
 }
 
@@ -63,7 +63,8 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #f0f0f0;
+    color: #e8f6f5;
+    /* light teal */
     text-decoration: none;
 }
 
@@ -73,36 +74,36 @@ nav ul li a {
 }
 
 .warning {
-    color: #ff6b6b;
-    /* bright red for warnings */
+    color: #c0392b;
     font-weight: bold;
 }
 
+/* unified teal variable set */
 .mycolors {
-    --primary-color: #3fa9f5;
-    /* lighter blue accent */
-    --border-color: #4caf50;
-    /* green accent */
+    --primary-color: #0f4c4a;
+    /* dark teal */
+    --border-color: #146b6f;
+    /* medium teal */
 }
 
 .mybutton {
-    background-color: #2a3b47;
-    /* dark button background */
-    border: 1px solid #4caf50;
+    background-color: #5fb7b2;
+    /* light teal */
+    border: 1px solid #146b6f;
+    /* medium teal */
     border-radius: 10px;
     padding: 3px 10px;
-    color: #e0e0e0;
 }
 
-
 .popup-content {
-    background-color: #1e2a35;
+    background-color: #5fb7b2;
+    /* light teal */
     display: none;
     position: absolute;
-    border: 1px solid #555;
+    border: 1px solid #2a4f4e;
+    /* dark neutral border */
     padding: 10px;
     max-width: 769px;
-    color: #e0e0e0;
 }
 
 .popup-trigger:hover .popup-content {
@@ -120,20 +121,24 @@ nav ul li a {
 
 .menu-item {
     display: inline-block;
-    background-color: #3fa9f5;
-    color: #fff;
-    padding: 5px 10px;
+    background-color: #146b6f;
+    /* medium teal */
+    color: white;
+    padding: 5px 3px;
     margin: 5px;
     border-radius: 5px;
     text-decoration: none;
     transition: background-color 0.3s, box-shadow 0.3s;
     cursor: pointer;
-    border: 1px solid #444;
+    border: 1px solid #2a4f4e;
+    /* dark border */
 }
 
 .menu-item:hover {
-    background-color: #105068;
-    box-shadow: 0 0 10px #14ddfb;
+    background-color: #0f4c4a;
+    /* dark teal */
+    box-shadow: 0 0 10px #7fe8e0;
+    /* teal glow */
     transform: scale(1.05);
 }
 
@@ -156,7 +161,8 @@ nav ul li a {
     .hamburger div {
         width: 25px;
         height: 3px;
-        background-color: #3fa9f5;
+        background-color: #5fb7b2;
+        /* light teal */
         margin: 5px 0;
     }
 
@@ -170,49 +176,49 @@ nav ul li a {
     display: flex;
     justify-content: space-between;
     padding: 0.5rem 0;
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid #2a4f4e;
+    /* dark neutral */
 }
 
 .name {
     flex: 1;
     font-weight: bold;
-    color: #f0f0f0;
 }
 
 .description {
     flex: 2;
     padding-left: 1rem;
     word-wrap: break-word;
-    color: #ccc;
 }
 
 /* Normal link */
 a {
-    color: rgb(0, 238, 255);
-    /* sets the default link color */
+    color: #5fb7b2;
+    /* light teal */
 }
 
 /* Visited link */
 a:visited {
-    color: purple;
-    /* color after the link has been clicked */
+    color: #3a8f8a;
+    /* muted teal */
 }
 
 /* Hover state */
+/* Hover state */
 a:hover {
-    color: red;
-    /* color when the mouse hovers over the link */
+    color: #7fe8e0;
+    /* bright teal accent */
 }
 
 /* Active (while clicking) */
 a:active {
-    color: orange;
-    /* color when the link is being clicked */
+    color: #146b6f;
+    /* medium teal */
 }
 
-
 .box {
-    border: 1px solid #32CD32;
+    border: 1px solid #146b6f;
+    /* medium teal */
     border-radius: 3px;
-    padding: 10px
+    padding: 10px;
 }

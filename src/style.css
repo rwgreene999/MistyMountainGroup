@@ -1,24 +1,188 @@
+/* ============================
+   DARK‑TEAL THEME VARIABLES
+   ============================ */
+
+:root {
+  --teal-dark: #0f4c4a;
+  --teal-mid: #139ea5;
+  --teal-light: #5fb7b2;
+  --teal-accent: #7fe8e0;
+
+  --neutral-border: #2a4f4e;
+  --neutral-bg-light: #e8f6f5;
+  --neutral-bg-dark: #0b2f2e;
+
+  --text-light: #e8f6f5;
+  --text-dark: #0b2f2e;
+
+  --gradient-main: linear-gradient(to bottom, var(--teal-mid), var(--teal-dark));
+
+  --warning: #c0392b;
+  --success: #2e8b57;
+
+  --link-normal: var(--teal-light);
+  --link-visited: #3a8f8a;
+  --link-hover: var(--teal-accent);
+  --link-active: var(--teal-mid);
+
+  --button-bg: var(--teal-light);
+  --button-border: var(--teal-mid);
+
+  --glow-accent: 0 0 10px var(--teal-accent);
+
+  --border-strong: var(--teal-mid);
+  --border-soft: var(--neutral-border);
+
+  --menu-words: #ffffff;
+}
+
+
+
+body.theme-light {
+  --teal-dark: #e9f7f7;
+  --teal-mid: #b7e4e2;
+  --teal-light: #90ece9;
+  --teal-accent: #3aa7a1;
+
+  --neutral-border: #c7dedd;
+  --neutral-bg-light: #ffffff;
+  --neutral-bg-dark: #e6f2f2;
+
+  --text-light: #0b2f2e;
+  --text-dark: #0b2f2e;
+
+
+  --gradient-main: linear-gradient(to bottom, var(--teal-mid), var(--teal-dark));
+
+  --warning: #b83227;
+  --success: #2e8b57;
+
+  --link-normal: #146f28;
+  --link-visited: #0f4c4a;
+  --link-hover: #0a240b;
+  --link-active: #0f4c4a;
+
+  --button-bg: #dff7f6;
+  --button-border: #3aa7a1;
+
+  --glow-accent: 0 0 10px #3aa7a1;
+
+  --border-strong: #3aa7a1;
+  --border-soft: #c7dedd;
+
+  --menu-words: #000;
+}
+
+
+body.theme-dark {
+  /* Core dark surfaces */
+  --teal-dark: #0c0c0c;
+  /* Windows dark background */
+  --teal-mid: #1f1f1f;
+  /* Secondary surface */
+  --teal-light: #2b2b2b;
+  /* Tertiary surface */
+  --teal-accent: #3aa7a1;
+  /* Keep your accent or change to Windows blue */
+
+  /* Neutral borders + backgrounds */
+  --neutral-border: #3a3a3a;
+  /* Subtle border */
+  --neutral-bg-light: #1f1f1f;
+  /* Windows panel background */
+  --neutral-bg-dark: #0c0c0c;
+  /* Deep background */
+
+  /* Text colors */
+  --text-light: #ffffff;
+  /* Primary text */
+  --text-dark: #d0d0d0;
+  /* Secondary text */
+
+
+  --gradient-main: linear-gradient(to bottom, var(--teal-mid), var(--teal-dark));
+
+  /* Semantic colors */
+  --warning: #e74c3c;
+  --success: #2ecc71;
+
+  /* Links (Windows uses blue by default) */
+  --link-normal: #4aa3ff;
+  --link-visited: #8ab4f8;
+  --link-hover: #c2e0ff;
+  --link-active: #1a73e8;
+
+  /* Buttons */
+  --button-bg: #5e5454;
+  --button-border: #3a3a3a;
+
+  /* Glow / focus ring */
+  --glow-accent: 0 0 10px #4aa3ff;
+
+  /* Borders */
+  --border-strong: #4a4a4a;
+  --border-soft: #3a3a3a;
+
+  /* Menu text */
+  --menu-words: #ffffff;
+}
+
+body.theme-purple {
+  --teal-dark: #2a0f4c;
+  --teal-mid: #4b1f7a;
+  --teal-light: #7d4bb8;
+  --teal-accent: #c29bff;
+
+  --neutral-border: #3a2a4f;
+  --neutral-bg-light: #f7f0ff;
+  --neutral-bg-dark: #1a0b2e;
+
+  --text-light: #f5e8ff;
+  --text-dark: #1a0b2e;
+
+  --gradient-main: linear-gradient(to bottom, var(--teal-mid), var(--teal-dark));
+
+  --warning: #d35400;
+  --success: #8e44ad;
+
+  --link-normal: #c29bff;
+  --link-visited: #7d4bb8;
+  --link-hover: #e0c8ff;
+  --link-active: #4b1f7a;
+
+  --button-bg: #7d4bb8;
+  --button-border: #4b1f7a;
+
+  --glow-accent: 0 0 10px #c29bff;
+
+  --border-strong: #4b1f7a;
+  --border-soft: #3a2a4f;
+
+  --menu-words: #ffffff;
+}
+
+
+
+/* ============================
+   ORIGINAL CSS, NOW VARIABLE‑DRIVEN
+   ============================ */
+
 .content-section {
   display: none;
 }
 
 .extendedComment {
-  background-color: #87CEEB;
-  border: 2px solid #32CD32;
+  background-color: var(--teal-light);
+  border: 2px solid var(--border-strong);
   display: none;
   margin: 0 auto;
   max-width: 70vw;
   padding: 10px;
 }
 
-.privacyQuoteSelection {
-  display: none;
-}
-
 .content-section.active {
   display: block;
 }
-
 
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -30,28 +194,25 @@ body {
   flex-direction: column;
   min-height: 100vh;
   max-width: 760px;
-  background-image: linear-gradient(to bottom, #a8ddf4, #5fcaf8);
-
+  background-image: var(--gradient-main);
+  color: var(--text-light);
 }
 
 h2 {
   font-style: italic;
 }
 
-
 footer {
   position: fixed;
   bottom: 0;
   width: 100%;
   padding: 1px;
-  background-color: #1d6b9c;
+  background-color: var(--teal-dark);
   text-align: center;
   font-size: x-small;
-  color: white;
+  color: var(--menu-words);
   max-width: 769px;
 }
-
-
 
 nav ul {
   list-style-type: none;
@@ -59,7 +220,6 @@ nav ul {
   margin: 0;
   display: flex;
   justify-content: center;
-
 }
 
 nav ul li {
@@ -67,7 +227,7 @@ nav ul li {
 }
 
 nav ul li a {
-  color: white;
+  color: var(--text-light);
   text-decoration: none;
 }
 
@@ -77,30 +237,27 @@ nav ul li a {
 }
 
 .warning {
-  color: #c0392b;
+  color: var(--warning);
   font-weight: bold;
 }
 
 .mycolors {
-  --primary-color: #2793be;
-  --border-color: #008000;
+  --primary-color: var(--teal-dark);
+  --border-color: var(--border-strong);
 }
 
-
 .mybutton {
-  background-color: #a8ddf4;
-  border: 1px solid #008000;
+  background-color: var(--button-bg);
+  border: 1px solid var(--button-border);
   border-radius: 10px;
-  padding: 3px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 3px 10px;
 }
 
 .popup-content {
-  background-color: #87CEEB;
+  background-color: var(--teal-light);
   display: none;
   position: absolute;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-soft);
   padding: 10px;
   max-width: 769px;
 }
@@ -108,8 +265,6 @@ nav ul li a {
 .popup-trigger:hover .popup-content {
   display: block;
 }
-
-
 
 .menu {
   list-style-type: none;
@@ -122,21 +277,20 @@ nav ul li a {
 
 .menu-item {
   display: inline-block;
-  background-color: #1895de;
-  color: white;
+  background-color: var(--teal-mid);
+  color: var(--menu-words);
   padding: 5px 3px;
   margin: 5px;
   border-radius: 5px;
   text-decoration: none;
   transition: background-color 0.3s, box-shadow 0.3s;
   cursor: pointer;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-soft);
 }
 
-
 .menu-item:hover {
-  background-color: #105068;
-  box-shadow: 0 0 10px #14ddfb;
+  background-color: var(--teal-dark);
+  box-shadow: var(--glow-accent);
   transform: scale(1.05);
 }
 
@@ -159,7 +313,7 @@ nav ul li a {
   .hamburger div {
     width: 25px;
     height: 3px;
-    background-color: rgb(35, 189, 228);
+    background-color: var(--teal-light);
     margin: 5px 0;
   }
 
@@ -167,21 +321,18 @@ nav ul li a {
     max-width: 100vw;
     padding: 2px;
   }
-
-
 }
 
 .row {
   display: flex;
   justify-content: space-between;
   padding: 0.5rem 0;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--border-soft);
 }
 
 .name {
   flex: 1;
   font-weight: bold;
-
 }
 
 .description {
@@ -190,32 +341,24 @@ nav ul li a {
   word-wrap: break-word;
 }
 
-/* Normal link */
 a {
-  color: blue;
-  /* sets the default link color */
+  color: var(--link-normal);
 }
 
-/* Visited link */
 a:visited {
-  color: purple;
-  /* color after the link has been clicked */
+  color: var(--link-visited);
 }
 
-/* Hover state */
 a:hover {
-  color: red;
-  /* color when the mouse hovers over the link */
+  color: var(--link-hover);
 }
 
-/* Active (while clicking) */
 a:active {
-  color: orange;
-  /* color when the link is being clicked */
+  color: var(--link-active);
 }
 
 .box {
-  border: 1px solid #4111ee;
+  border: 1px solid var(--border-strong);
   border-radius: 3px;
-  padding: 10px
+  padding: 10px;
 }
