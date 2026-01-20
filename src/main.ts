@@ -95,7 +95,9 @@ function handlePageSelection(selectedPage: string) {
   if (selectedPage === 'windows') {
     document.getElementById('windowsLink')?.click();
   }
-
+  if (selectedPage === 'safety') {
+    document.getElementById('internetLink')?.click();
+  }
   if (selectedPage === 'windowsTools') {
     document.getElementById('windowsToolsLink')?.click();
   }
