@@ -14,11 +14,18 @@ Dec 31, 25
 * provide url line to set color 
 * Change base color to something else 
 
+Jan 20, 25 
+* added safety as url line 
+* added new info in fun
+* Updated Linux, showing steps I have taken
+* changed some of the colors for readability
+
 
 Todos 
  
 In general 
 * change color to show the colors
+* Purple and White need a darker ine around the menus 
 
 
 

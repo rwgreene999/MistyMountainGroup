@@ -20,7 +20,7 @@
   --warning: #c0392b;
   --success: #2e8b57;
 
-  --link-normal: var(--teal-light);
+  --link-normal: blue;
   --link-visited: #3a8f8a;
   --link-hover: var(--teal-accent);
   --link-active: var(--teal-mid);
