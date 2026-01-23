@@ -25,7 +25,10 @@ Todos
  
 In general 
 * change color to show the colors
-* Purple and White need a darker ine around the menus 
+* Add reference to European tools: https://euroalternative.co/
+* add reference to Linux security: https://www.youtube.com/watch?v=QxNsyrftJ8I
+    firewall, fail2block thing 
+
 
 
 

@@ -1,10 +1,11 @@
 <article>
     <h1>Why I'm switching to Linux: Reclaiming Privacy and Control</h1>
-    <button id="showWhyISwitchingToLinux" class="mybutton" onclick="showExtended('WhyISwitchingToLinux')">
+    <!-- <button id="showWhyISwitchingToLinux" class="mybutton" onclick="showExtended('WhyISwitchingToLinux')">
         ℹ️ Read what has motivated me to switch!
-    </button>
+    </button> -->
 
-    <div id="WhyISwitchingToLinux" class="extendedComment">
+    <!-- <div id="WhyISwitchingToLinux" class="extendedComment"> -->
+    <div id="WhyISwitchingToLinux" >
         <p>In an era of increasing digital surveillance, I've embarked on a journey to switch to Linux, primarily driven
             by
             privacy concerns and a desire for greater control over my computing environment.</p>
@@ -12,7 +13,7 @@
     </div>
 
 
-    <h2>The Microsoft Dilemma</h2>
+    <hr>
     <button id="showMicrosoftDilemma" class="mybutton" onclick="showExtended('MicrosoftDilemma')">
         ℹ️ Why I think Microsoft is changing their attitude towards user privacy
     </button>
@@ -36,7 +37,7 @@
 
 
 
-    <h2>The Apple-inspired Shift</h2>
+    <hr>
     <button id="showAppleInspiredShift" class="mybutton" onclick="showExtended('AppleInspiredShift')">
         ℹ️ The Apple-inspired Shift
     </button>
@@ -57,7 +58,7 @@
 
 
 
-    <h2>Privacy Concerns Across Platforms</h2>
+    <hr>
     <button id="showPrivacyConcerns" class="mybutton" onclick="showExtended('PrivacyConcerns')">
         ℹ️ Privacy Concerns Across Platforms
     </button>   
@@ -81,8 +82,7 @@
 
 
 
-
-    <h2>Linux: A Path to Digital Autonomy</h2>
+<hr>
     <button id="showLinuxAutonomy" class="mybutton" onclick="showExtended('LinuxAutonomy')">
         ℹ️ Linux: A Path to Digital Autonomy
     </button>
@@ -100,39 +100,100 @@
     </ul>
     </div>  
 
-
-    <h2>The Transition Process</h2>
+    
+<hr>    
 <button id="showTransitionProcess" class="mybutton" onclick="showExtended('TransitionProcess')">
-    ℹ️ My Transition Process Concerns
-</button>   
+    ℹ️ The Transition Process, How you use your computer What level computer user are you? 
+</button>  
 <div id="TransitionProcess" class="extendedComment">
-    <p>My switch to Linux is still in progress:</p>
 
-    <ul>
-        <li><strong>Multiple machine setup</strong>: Ensuring seamless remote control and data sharing between devices.
-        </li>
-        <li><strong>Backup solutions</strong>: Implementing robust backup systems.</li>
-        <li><strong>Software compatibility</strong>: Verifying that complex tools are either available or have suitable
-            alternatives in the Linux environment.</li>
-    </ul>
+    <p>The effort to transition into Linux depends on how you use your computer. I've kind of loosely divided it into three levels listed below.</p>
+<p> <strong>Level 1: </strong>The transition to Linux can be daunting to people at first period to some degree it depends on how you actually use your computer
+    If you use your computer to log in to your bank, watch Youtube videos or Netflix, and most of your work is done on the Internet, it's going to be really easy to go to Linux. </p>
+    <p><strong>Level 2: </strong>If you work on your desktop such as using Office products, photo editing, etc then you might want to test your workflow before you commit your main machine to using Linux.  
+    Products exist in Linux to accomplish the same tasks you would expect from Windows but some might require some additional training. 
+    For example GIMP works as well as Photoshop for photo editing but you will have to get used to GIMP's way of doing things.
+    <p><strong>Level 3: </strong>Using your computer for software development or CAD requires that you learn how to accomplish these same goals in Linux before you commit 100% to it. </p>
+
+</p>
+
 </div>  
+
+
+<hr>    
+<button id="showStartYourLinux" class="mybutton" onclick="showExtended('StartYourLinux')">
+    ℹ️ Start your Linux Transition 
+</button>  
+<div id="StartYourLinux" class="extendedComment"></div>
+
+<ul>
+    <li><strong>Choose a Linux distro </strong>
+        There are many Linux Distros (distributions).  
+        Since this is an overview of migration from Windows, I am focused on a few solutions which work well on most machines.  
+        <ul>
+            <li>Linux Mint (cinnamon) </li>
+            <li>Zorin OS</li>
+            <li><a href="https://www.zdnet.com/article/the-best-linux-distros-for-beginners-in-2025-make-switching-from-macos-or-windows-easy/" target="_blank" rel="noopener noreferrer">https://www.zdnet.com/article/the-best-linux-distros-for-beginners-in-2025-make-switching-from-macos-or-windows-easy/</a>
+                </li>
+                <li>These products will install a Linux similar to Windows.  Mint installs everything the average level 1 and level 2 user would need.  Zorin installs many of these apps also. And if you don't like the office products that come with Zorin or Mint, you can always install the free alternatives (example alternatives to Microsoft Office are LibreOffice, Apache OpenOffice, Calligra Office, FreeOffice,and KOffice).  You find these things by google, search: Microsoft Office Alternative or search: Photoshop alternatives for linux </li>
+        </ul>
+    </li>
+    <li><strong>Test from a Flash drive.  </strong>>
+        <p> If you have an older machine, you can just install on it.  
+            Otherwise, you might want to install onto a flash drive and test your machine from the USB. 
+            The benefit of this is you maintain your real operating system until you're ready to commit to your Linux distro </p>
+            <ul>
+                <li>Two videos showing the installation of Mint on a flash drive</li>
+                <li><a href="https://www.youtube.com/watch?v=qNroapFEiKU" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=qNroapFEiKU</a>   </li>
+                <li><a href="https://www.youtube.com/watch?v=RBC72byLDAA" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=RBC72byLDAA</a>   </li>
+            </ul>
+            <p> If you are used to working with virtual machines coming you could do all this on a virtual machine instead of a USB.</p>
+    </li>    
+    <p></p>
+    <li>Boot from the USB</li>
+    <ul>
+        <li>Some machines will boot from the USB if it is plugged in, other machines require you to enter UEFI (BIOS) F12 or F2 whatever your machine docs say</li>
+        <li>Some machines have a <strong>Secure Boot</strong> feature which you will have to disable if you want to boot from the USB</li>
+        <li>Once you get past the issues above, and boot, you will be looking at the login screen for your Linux distro</li>
+        <li>You can test everything to make sure your computer works as expected (sound, USB access, external monitors, ...)</li>
+    </ul>
+    <p></p> 
+    <li>Secure your Linux machine</li>
+    <p>Unlike Windows, you don't need to activate the firewall and other security for your linux. 
+        Linux is more secure and more private, but only if you turn it on. 
+        Just follow this video, the comments in the video have the cut and past instructions to secure your Linux machine.
+        <a href="https://www.youtube.com/watch?v=QxNsyrftJ8I" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=QxNsyrftJ8I</a>
+    </p>
+</ul>    
+
+
+</div>  
+
+
 
 
 <h2>Transition Steps </h2>
 <button id="showTransitionSteps" class="mybutton" onclick="showExtended('TransitionSteps')">
-    ℹ️ Transition Steps
+    ℹ️ My Transition Steps, what I did!
 </button>   
 <div id="TransitionSteps" class="extendedComment">
     <p>This is the process I implemented to switch to Linux:</p>
 <ul>
-    <li><strong>Step 1:</strong> Pick a Linux Distro (distribution).  In my case I picked Linux Mint Cinnamon. It comes with a windows like interface and tools like browser and office type products read to use. </li>
-    <li><strong>Step 2:</strong> Test on machine.  These days most Distros work on most machines.  But I put Mint put it on a flash drive, boot to the flash drive and tested my machine.</li>   
+    <li><strong>Step 1:</strong> I pick a Linux Distro (distribution).  In my case I picked Linux Mint Cinnamon. 
+        It comes with a windows like interface and tools like browser and office type products read to use. </li>
+    <li><strong>Step 2:</strong> Tested on several machines.  These days most Distros work on most machines.  But I put Mint put it on a flash drive, boot to the flash drive and tested my machine.</li>   
     <li><strong>Step 3:</strong>Once I decided it would work, I installed on the hard drive replacing windows. </li>
 </ul>
 <p>Easy as 1-2-3!  </p>
 <p> To some degree it really is easy as 123. When you get into more complex environment like multiple machines such as I have, there were other considerations which I had to address.  For information and how to instructions, I used AIs.  I would use perplexity or copilot and just ask them questions such as "in Windows I do a dir command to get a list of folders how do I do that in Mint?".  Or question like "I want to watch videos downloaded onto my Linux.  What do I do?".  That led into more complex questions such as "I want to access shared media from one of my Windows machines how do I do that in Mint?"  Some of these things trivial to implement, it just takes a lot of effort and a lot of asking questions.</p>
 
-<p> But what I did all of this on an old laptop that would not upgrade to Windows 11 so that laptop now has Linux Mint running full time. I've installed all of my tools on it. I can check email I can go browse the Internet I can access shares inside of my house. </p>
+<p> But what I did all of this on an old laptop that would not upgrade to Windows 11 so that laptop now has Linux Mint running full time. 
+    I've installed all of my tools on it. 
+    I can check email I can go browse the Internet I can access shares inside of my house. 
+    I can update this web page, using vs Code on Linux, BUT I doubt I can create windows programs on Linux.
+</p>
+<p>My next steps is to place all of my media and shared data accessed from the Mint machines.  Then the laptops can be Windows or Mint.  Afterwards I will kill all of myWindwos and just use Mint. </p>
+
 </div>
 
 
