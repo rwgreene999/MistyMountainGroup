@@ -27,6 +27,9 @@ Jan 23, 2025
 jan 24, 2025
 * Added more colors, updated the Linux info sheet
 
+jan 24, 25
+* added a list of scams found on this day 
+
 Todos 
  
 In general 
