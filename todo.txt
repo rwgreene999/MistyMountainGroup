@@ -20,14 +20,18 @@ Jan 20, 25
 * Updated Linux, showing steps I have taken
 * changed some of the colors for readability
 
+Jan 23, 2025
+* add reference to Linux security: https://www.youtube.com/watch?v=QxNsyrftJ8I, 
+    firewall, fail2block thing 
+
+jan 24, 2025
+* Added more colors, updated the Linux info sheet
 
 Todos 
  
 In general 
 * change color to show the colors
 * Add reference to European tools: https://euroalternative.co/
-* add reference to Linux security: https://www.youtube.com/watch?v=QxNsyrftJ8I
-    firewall, fail2block thing 
 
 
 
