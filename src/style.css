@@ -161,6 +161,312 @@ body.theme-purple {
   --menu-words: #ffffff;
 }
 
+body.theme-gold {
+  --teal-dark: #4c3a0f;
+  --teal-mid: #7a5f1f;
+  --teal-light: #b89a4b;
+  --teal-accent: #ffe29b;
+
+  --neutral-border: #4f442a;
+  --neutral-bg-light: #fff9e8;
+  --neutral-bg-dark: #2e260b;
+
+  --text-light: #fff7e8;
+  --text-dark: #2e260b;
+
+  --gradient-main: linear-gradient(to bottom, var(--teal-mid), var(--teal-dark));
+
+  --warning: #d35400;
+  --success: #c9a23a;
+
+  --link-normal: #ffe29b;
+  --link-visited: #b89a4b;
+  --link-hover: #fff1c8;
+  --link-active: #7a5f1f;
+
+  --button-bg: #b89a4b;
+  --button-border: #7a5f1f;
+
+  --glow-accent: 0 0 10px #ffe29b;
+
+  --border-strong: #7a5f1f;
+  --border-soft: #4f442a;
+
+  --menu-words: #ffffff;
+}
+
+body.theme-blue {
+  --teal-dark: #0a1e3f;
+  --teal-mid: #123d7a;
+  --teal-light: #4a7bd1;
+  --teal-accent: #9fc4ff;
+
+  --neutral-border: #1c2a3a;
+  --neutral-bg-light: #eef4ff;
+  --neutral-bg-dark: #081426;
+
+  --text-light: #e8f1ff;
+  --text-dark: #081426;
+
+  --gradient-main: linear-gradient(to bottom, var(--teal-mid), var(--teal-dark));
+
+  --warning: #d35400;
+  --success: #1e7bbf;
+
+  --link-normal: #9fc4ff;
+  --link-visited: #4a7bd1;
+  --link-hover: #cfe3ff;
+  --link-active: #123d7a;
+
+  --button-bg: #4a7bd1;
+  --button-border: #123d7a;
+
+  --glow-accent: 0 0 10px #9fc4ff;
+
+  --border-strong: #123d7a;
+  --border-soft: #1c2a3a;
+
+  --menu-words: #ffffff;
+}
+
+
+body.theme-green {
+  --teal-dark: #0f3a24;
+  --teal-mid: #1f6a3e;
+  --teal-light: #4caf72;
+  --teal-accent: #9be8b9;
+
+  --neutral-border: #1e3a2e;
+  --neutral-bg-light: #f0fff7;
+  --neutral-bg-dark: #0b2417;
+
+  --text-light: #e8fff2;
+  --text-dark: #0b2417;
+
+  --gradient-main: linear-gradient(to bottom, var(--teal-mid), var(--teal-dark));
+
+  --warning: #d35400;
+  --success: #2ecc71;
+
+  --link-normal: #9be8b9;
+  --link-visited: #4caf72;
+  --link-hover: #c8f7dd;
+  --link-active: #1f6a3e;
+
+  --button-bg: #4caf72;
+  --button-border: #1f6a3e;
+
+  --glow-accent: 0 0 10px #9be8b9;
+
+  --border-strong: #1f6a3e;
+  --border-soft: #1e3a2e;
+
+  --menu-words: #ffffff;
+}
+
+
+body.theme-red {
+  --teal-dark: #4c0f14;
+  --teal-mid: #7a1f28;
+  --teal-light: #b84b55;
+  --teal-accent: #ff9ba4;
+
+  --neutral-border: #4f2a2a;
+  --neutral-bg-light: #fff0f2;
+  --neutral-bg-dark: #2e0b0e;
+
+  --text-light: #ffe8eb;
+  --text-dark: #2e0b0e;
+
+  --gradient-main: linear-gradient(to bottom, var(--teal-mid), var(--teal-dark));
+
+  --warning: #e67e22;
+  --success: #c0392b;
+
+  --link-normal: #ff9ba4;
+  --link-visited: #b84b55;
+  --link-hover: #ffd0d5;
+  --link-active: #7a1f28;
+
+  --button-bg: #b84b55;
+  --button-border: #7a1f28;
+
+  --glow-accent: 0 0 10px #ff9ba4;
+
+  --border-strong: #7a1f28;
+  --border-soft: #4f2a2a;
+
+  --menu-words: #ffffff;
+}
+
+
+body.theme-southwest {
+  /* Turquoise family (replaces your purple “teal” stack) */
+  --teal-dark: #0f3b3a;
+  /* deep turquoise shadow */
+  --teal-mid: #1f6f6a;
+  /* classic turquoise */
+  --teal-light: #4fb8b0;
+  /* bright jewelry turquoise */
+  --teal-accent: #9ff2e8;
+  /* pale aqua highlight */
+
+  /* Neutrals inspired by adobe, sand, and sage */
+  --neutral-border: #6a4e3a;
+  /* adobe brown */
+  --neutral-bg-light: #fff7ec;
+  /* pale sand */
+  --neutral-bg-dark: #2e1a12;
+  /* dark clay */
+
+  /* Text colors */
+  --text-light: #fff7ec;
+  /* sand-tinted white */
+  --text-dark: #2e1a12;
+  /* adobe shadow */
+
+  /* Gradient */
+  --gradient-main: linear-gradient(to bottom, var(--teal-mid), var(--teal-dark));
+
+  /* Status colors (southwest‑flavored variants) */
+  --warning: #d97a2b;
+  /* desert orange */
+  --success: #6f8f3a;
+  /* sage green */
+
+  /* Links (turquoise jewelry tones) */
+  --link-normal: #9ff2e8;
+  --link-visited: #4fb8b0;
+  --link-hover: #c9fff8;
+  --link-active: #1f6f6a;
+
+  /* Buttons */
+  --button-bg: #4fb8b0;
+  --button-border: #1f6f6a;
+
+  /* Glow */
+  --glow-accent: 0 0 10px #9ff2e8;
+
+  /* Borders */
+  --border-strong: #1f6f6a;
+  --border-soft: #6a4e3a;
+
+  /* Menu text */
+  --menu-words: #ffffff;
+}
+
+
+body.theme-sunset {
+  /* Sunset sky core hues */
+  --teal-dark: #4c1f47;
+  /* deep twilight plum */
+  --teal-mid: #8a3a6a;
+  /* rose-magenta midtone */
+  --teal-light: #d46f8e;
+  /* warm coral-pink */
+  --teal-accent: #ffb7a8;
+  /* apricot highlight */
+
+  /* Neutrals inspired by warm dusk light */
+  --neutral-border: #5a3a3a;
+  /* muted warm brown */
+  --neutral-bg-light: #fff4ee;
+  /* soft peach haze */
+  --neutral-bg-dark: #2a1418;
+  /* deep dusk shadow */
+
+  /* Text */
+  --text-light: #fff4ee;
+  /* peach-tinted white */
+  --text-dark: #2a1418;
+  /* twilight brown */
+
+  /* Gradient (sunset fade) */
+  --gradient-main: linear-gradient(to bottom, var(--teal-mid), var(--teal-dark));
+
+  /* Status colors with sunset flavor */
+  --warning: #e67e22;
+  /* glowing orange */
+  --success: #c06f4f;
+  /* warm earthy terracotta */
+
+  /* Links (soft rose → coral → apricot) */
+  --link-normal: #ffb7a8;
+  --link-visited: #d46f8e;
+  --link-hover: #ffe0d8;
+  --link-active: #8a3a6a;
+
+  /* Buttons */
+  --button-bg: #d46f8e;
+  --button-border: #8a3a6a;
+
+  /* Glow */
+  --glow-accent: 0 0 10px #ffb7a8;
+
+  /* Borders */
+  --border-strong: #8a3a6a;
+  --border-soft: #5a3a3a;
+
+  /* Menu text */
+  --menu-words: #ffffff;
+}
+
+
+body.theme-navajo {
+  /* Core palette: turquoise + rug red + midnight */
+  --teal-dark: #1a2a3a;
+  /* midnight blue (shadow) */
+  --teal-mid: #2f556a;
+  /* muted sky blue */
+  --teal-light: #4fa8b0;
+  /* turquoise jewelry */
+  --teal-accent: #a8f2e0;
+  /* pale turquoise highlight */
+
+  /* Earth neutrals inspired by Navajo textiles */
+  --neutral-border: #6a3a2a;
+  /* rug red/brown */
+  --neutral-bg-light: #fff5e6;
+  /* warm sand */
+  --neutral-bg-dark: #2a1a12;
+  /* deep earth clay */
+
+  /* Text */
+  --text-light: #fff5e6;
+  /* sand-tinted white */
+  --text-dark: #2a1a12;
+  /* earth brown */
+
+  /* Gradient (sky → night) */
+  --gradient-main: linear-gradient(to bottom, var(--teal-mid), var(--teal-dark));
+
+  /* Status colors with Navajo textile influence */
+  --warning: #d96a2b;
+  /* desert orange */
+  --success: #8c5f3a;
+  /* warm leather brown */
+
+  /* Links (turquoise spectrum) */
+  --link-normal: #a8f2e0;
+  --link-visited: #4fa8b0;
+  --link-hover: #d8fff7;
+  --link-active: #2f556a;
+
+  /* Buttons */
+  --button-bg: #4fa8b0;
+  --button-border: #2f556a;
+
+  /* Glow */
+  --glow-accent: 0 0 10px #a8f2e0;
+
+  /* Borders */
+  --border-strong: #2f556a;
+  --border-soft: #6a3a2a;
+
+  /* Menu text */
+  --menu-words: #ffffff;
+}
+
 
 
 /* ============================
