@@ -30,11 +30,15 @@ jan 24, 2025
 jan 24, 25
 * added a list of scams found on this day 
 
+feb 04, 26 
+* email-update Updated the emailsection, with chart and recommendations, a few spelling checks 
+
 Todos 
  
 In general 
-* change color to show the colors
+* change color buttons to show the colors
 * Add reference to European tools: https://euroalternative.co/
+
 
 
 
