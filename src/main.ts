@@ -266,10 +266,54 @@ function goInterestingThingsMenu() {
 }
 
 
+// Load quotes from local JSON file
 function loadQuotes(): Promise<any> {
   return fetch('dist/data/quotes.json')
     .then(response => response.json());
 }
+
+function PickQuoteFromList(quotes: any[]): any {
+  const randomIndex = Math.floor(Math.random() * quotes.length);
+  return quotes[randomIndex];
+}
+
+
+function getRandomQuoteAndUpdateTextArea() {
+  const output = document.getElementById('quoteOutput') as HTMLParagraphElement;
+  const cite = document.getElementById('quoteCite');
+  output.innerHTML = "";
+  cite!.textContent = "";
+  loadQuotes().then(quotes => {
+    const quote = PickQuoteFromList(quotes);
+    output.innerHTML = quote.Comment;
+    if (quote.Author.length > 0) {
+      cite!.textContent = `Citation: ${quote.Author}`;
+    } else {
+      cite!.textContent = '';
+    }
+    // document.getElementById('quoteOutput').innerHTML = `${quote.Comment}\n-- ${quote.Author}`;
+  });
+}
+
+
+
+function _Official_getRandomQuoteAndUpdateTextArea() {
+  const output = document.getElementById('quoteOutput') as HTMLParagraphElement;
+  const cite = document.getElementById('quoteCite');
+  output.innerHTML = "";
+  cite!.textContent = "";
+  getRandomQuote().then(quote => {
+    output.innerHTML = quote.Comment;
+    if (quote.Author.length > 0) {
+      cite!.textContent = `Citation: ${quote.Author}`;
+    } else {
+      cite!.textContent = '';
+    }
+    // document.getElementById('quoteOutput').innerHTML = `${quote.Comment}\n-- ${quote.Author}`;
+  });
+}
+
+
 
 
 function GeneratedgetRandomQuote(uri: string): Promise<string> {
@@ -316,24 +360,6 @@ function getRandomQuote(): Promise<any> {
     });
 };
 
-
-
-function getRandomQuoteAndUpdateTextArea() {
-  const output = document.getElementById('quoteOutput') as HTMLParagraphElement;
-  const cite = document.getElementById('quoteCite');
-  output.innerHTML = "";
-  cite!.textContent = "";
-
-  getRandomQuote().then(quote => {
-    output.innerHTML = quote.Comment;
-    if (quote.Author.length > 0) {
-      cite!.textContent = `Citation: ${quote.Author}`;
-    } else {
-      cite!.textContent = '';
-    }
-    // document.getElementById('quoteOutput').innerHTML = `${quote.Comment}\n-- ${quote.Author}`;
-  });
-}
 
 
 function OriginalgetRandomQuoteAndUpdateTextArea() {

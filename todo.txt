@@ -39,6 +39,9 @@ feb04,26
 feb04,26 
 * UserTheme "added code to determine the windows background and auto set theme, also adjusted style border colors"
 
+feb04,2026
+* TempQuoteServer "Updated Quotes to utilize the local copy until I find time to reinstall node somewhere"
+
 Todos 
  
 In general 
