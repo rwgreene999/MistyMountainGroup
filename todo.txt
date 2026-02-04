@@ -36,6 +36,9 @@ feb 04, 26
 feb04,26
 * UpdateInteresting changed interesting to reflect tighter presentation with row'ed items 
 
+feb04,26 
+* UserTheme "added code to determine the windows background and auto set theme, also adjusted style border colors"
+
 Todos 
  
 In general 

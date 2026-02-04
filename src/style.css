@@ -41,7 +41,7 @@
 body.theme-light {
   --teal-dark: #e9f7f7;
   --teal-mid: #b7e4e2;
-  --teal-light: #90ece9;
+  --teal-light: #13e7cb;
   --teal-accent: #3aa7a1;
 
   --neutral-border: #c7dedd;
@@ -68,7 +68,7 @@ body.theme-light {
   --glow-accent: 0 0 10px #3aa7a1;
 
   --border-strong: #3aa7a1;
-  --border-soft: #c7dedd;
+  --border-soft: #1ce62c;
 
   --menu-words: #000;
 }
@@ -76,11 +76,11 @@ body.theme-light {
 
 body.theme-dark {
   /* Core dark surfaces */
-  --teal-dark: #0c0c0c;
+  --teal-dark: #1d1c1c;
   /* Windows dark background */
-  --teal-mid: #1f1f1f;
+  --teal-mid: #1e263a;
   /* Secondary surface */
-  --teal-light: #2b2b2b;
+  --teal-light: #706f6f;
   /* Tertiary surface */
   --teal-accent: #3aa7a1;
   /* Keep your accent or change to Windows blue */
@@ -156,7 +156,8 @@ body.theme-purple {
   --glow-accent: 0 0 10px #c29bff;
 
   --border-strong: #4b1f7a;
-  --border-soft: #3a2a4f;
+  --border-soft: #5e516e;
+
 
   --menu-words: #ffffff;
 }
@@ -614,6 +615,7 @@ nav ul li a {
     display: block;
     cursor: pointer;
     padding: 10px;
+
   }
 
   .hamburger div {
