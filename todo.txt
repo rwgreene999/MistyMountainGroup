@@ -31,7 +31,10 @@ jan 24, 25
 * added a list of scams found on this day 
 
 feb 04, 26 
-* email-update Updated the emailsection, with chart and recommendations, a few spelling checks 
+* email-update Updated the email section, with chart and recommendations, a few spelling checks 
+
+feb04,26
+* UpdateInteresting changed interesting to reflect tighter presentation with row'ed items 
 
 Todos 
  
