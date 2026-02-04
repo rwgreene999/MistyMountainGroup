@@ -9,12 +9,6 @@ goPersonalMenus();
 
 
 
-function writeStarted() {
-  console.log('writeStarted');
-}
-
-
-
 function showExtended(divTag: string) {
   console.log('showExtended:', divTag);
   const selectedID = document.getElementById(divTag);
@@ -67,6 +61,10 @@ document.addEventListener('DOMContentLoaded', () => {
   addMenuClickHandler('windowsToolsLink', 'windowsTools', 'windowsTools.html');
   addMenuClickHandler('aboutLink', 'about', 'about.html');
   console.log('DOM fully loaded and parsed');
+
+  // Detect and apply system theme
+  detectAndApplySystemTheme();
+
   handleURLQuery();
 
 
@@ -137,6 +135,9 @@ function handleURLQuery() {
 
 
 }
+
+
+
 
 
 
@@ -366,6 +367,42 @@ function SetStyleMode(theme: string) {
   // const link = document.getElementById('styleTheme') as HTMLLinkElement;
   // link?.setAttribute('href', 'dist/' + styleTheme);
 
+}
+
+function detectAndApplySystemTheme(): void {
+  // Check if the browser supports prefers-color-scheme
+  const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+  const lightModeQuery = window.matchMedia('(prefers-color-scheme: light)');
+
+  let selectedTheme: string;
+
+  if (darkModeQuery.matches) {
+    selectedTheme = 'dark';
+    console.log('System preference: dark mode detected');
+  } else if (lightModeQuery.matches) {
+    selectedTheme = 'light';
+    console.log('System preference: light mode detected');
+  } else {
+    selectedTheme = 'red';
+    console.log('No system preference detected, using red theme');
+  }
+
+  SetStyleMode(selectedTheme);
+
+  // Optional: Listen for changes in system theme preference
+  darkModeQuery.addEventListener('change', (e) => {
+    if (e.matches) {
+      console.log('System switched to dark mode');
+      SetStyleMode('dark');
+    }
+  });
+
+  lightModeQuery.addEventListener('change', (e) => {
+    if (e.matches) {
+      console.log('System switched to light mode');
+      SetStyleMode('light');
+    }
+  });
 }
 
 function pickRandomInternetComment() {
