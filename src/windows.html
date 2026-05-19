@@ -1,12 +1,12 @@
 <article>
-    <h1>The Essential Microsoft Windows Computer Security Guide</h1>
+    <h1>My Essential Microsoft Windows Computer Security Guide</h1>
 
 
     <div comment="Windows Security: Your Built-in Defender">
-        <h2>Windows Security: Your Built-in Defender</h2>
-        <p>Microsoft's "Windows Security" is a free, built-in tool, that provides comprehensive protection for your
-            Windows
-            machine.</p>
+        <hr>
+        <h2>Anti Malware (anti-virus) choice</h2>
+        <h3>Windows Security: The Built-in Defender</h3>
+        <p>Microsoft's "Windows Security" is a free, built-in tool, that provides comprehensive protection for your Windows machine.</p>
 
         <button id="showwindowsSecurity" class="mybutton" onclick="showExtended('windowsSecurity')">
             ℹ️ More about antivirus and malware protection!
@@ -69,9 +69,8 @@
 
     <div comment="Removing Pre-installed Antivirus">
         <hr>
-        <h2>Removing Pre-installed Antivirus</h2>
-        <p>Just bought a computer? Mosty likely it comes with a pre-installed antivirus program. Consider removing it in
-            favor of Microsoft Security.</p>
+        <h3>Got a new computer with preinstalled anti-virus?</h3>
+        <p>If you bought a new computer it most likely it comes with a pre-installed antivirus program. Consider removing it in favor of Microsoft Security.</p>
         <button id="showremovePreinstalledAntivirus" class="mybutton"
             onclick="showExtended('removePreinstalledAntivirus')">
             ℹ️ More about pre installed antivirus and malware
@@ -98,21 +97,21 @@
         </div>
     </div>
 
-    <div comment="Microsoft Recall ">
+    <div comment="Microsoft 'Recall' Product">
         <hr>
-        <h2>Microsoft Recall, are you sure?</h2>
+        <h3>Microsoft Recall, are you sure?</h3>
         <p>Microsoft has introduced a produce called 'recall'.
             This records your actions on your computer.
             The stated purpose is to provide you with a history of your actions.
             The secondary reason is to allow an AI learn how to help you in your daily chores.
         </p>
-        <p>The question is, do you want Microsoft recording everything you do on your computer?
+        <p>The question to ask yourself is, do you want Microsoft recording everything you do on your computer?
         </p>
-        <button id="showRecall" class="mybutton" onclick="showExtended('bitLocker')">
+        <button id="showRecall" class="mybutton" onclick="showExtended('ms-recall')">
             ℹ️ Learn How to check and disable Recall
         </button>
 
-        <div id="bitLocker" class='extendedComment'>
+        <div id="ms-recall" class='extendedComment'>
             <p>The question is, do you want Microsoft recording everything you do on your computer?
                 This is a privacy issue.
                 If you are using a corporate computer, your company may require this feature.
@@ -214,10 +213,9 @@
 
     <div comment="BitLocker: Encrypt Your Drive Data">
         <hr>
-        <h2>BitLocker: Encrypt Your Drive Data</h2>
+        <h3>BitLocker: Encrypt Your Drive Data</h3>
         <p>BitLocker is a technology to secure your drive from someone who steals your computer.
-            If it is turned on (like on a new computer), you need to take some action. If it is not on, you may want to
-            consider turning it on.
+            If it is turned on (most likely on a new computer), you need to take action to secure your data. If it is not turned on, you may want to consider turning it on.
         </p>
 
         <button id="showbitLocker" class="mybutton" onclick="showExtended('bitLocker')">
@@ -247,27 +245,30 @@
 
             <p>
                 <i>Is it necessary for you to use BitLocker?</i>
-                If your computer was issued to you by a corporation, BitLocker is probably already installed/ You do not
-                need to worry about it, that's your companies responsibility. You most likely enter a password at the
+                If your computer was issued to you by a corporation, BitLocker is probably already installed. This is now your companies responsibility. 
+                You most likely enter a password at the
                 power on of your computer before you really get started with a log in.
             </p>
 
+            <p> If you bought a computer recently Bitlocker may already be installed.</p>
+
             <p>
                 If this is your computer, you need to <b>consider the implications of BitLocker</b>.
-                If you keep sensitive information on your computer, especially if you travel with your computer, you may
-                consider
-                implementing Bitlocker.
-            </p>
-            <p>
-                A new computer with Windows installed may come to you already with BitLocker encryption. When you set up
-                your computer,
-                Microsoft encourages you to create a Microsoft account and at that point they may ask to encrypt your
-                drive,
-                or they may just encrypt it. The BitLocker 'unlock key' is attached to your Microsoft account.
-                You can add or remove BitLocker later if you want encrypt or decrypt your drive.
+                If you keep sensitive information on your computer, especially if you travel with your computer, you may consider implementing Bitlocker.
             </p>
 
-            <p>If BitLocker is active on your machine, <b>you absolutely need to get the BitLocker Recovery Codes.</b>.
+
+
+
+
+            <p>
+                When you set up your computer,
+                Microsoft encouraged you to create a Microsoft account and at that point they may ask to encrypt your drive, or they may just encrypt it. 
+                The BitLocker <i>'unlock key'</i> is attached to your Microsoft account. 
+                You need this key. 
+            </p>
+
+            <p>If BitLocker is active on your machine, <b>you absolutely need to get the BitLocker Recovery Codes.</b>. <i>Seriously, do not skip this step.</i>
                 Those keys allow access to your hard drive even if
                 your machine fails, and you move your drive to another computer.
                 Those Recovery Codes are also necessary if you
@@ -287,7 +288,7 @@
                 <li>Open Bitlocker Drive ( settings -> search for bitlocker ) </li>
                 <li>If BitLocker is active, get your recovery codes (see above) </li>
                 <li>If you decide to BitLocker your drive, this is your spot.</li>
-                <li>Remember to back up your recovery codes (not on your machine).</li>
+                <li>Remember to back up your recovery codes on paper (not on your machine).</li>
             </ul>
 
         </div>
