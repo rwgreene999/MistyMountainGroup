@@ -123,6 +123,46 @@
     </div>
 
 
+
+
+    <h2>Fixing Windows Problems</h2>        
+    <p>9 command line tools to fix Windows problems</p>
+
+    <div class=" row">
+            <div class="name">FixMyWindows</div>
+                <div class="description">
+                    These 9 microsoft tools can be used to fix windows problems.  They are all command line tools, but you can find videos on how to use them.
+                    <br>See this video for details, this is the source of the list of tools, which also explains what they accomplish.
+                    <a href="https://www.youtube.com/watch?v=I-T9AjKQlt0" target="_blank">https://www.youtube.com/watch?v=I-T9AjKQlt0</a>
+                    <ul>
+<li>winget upgrade –all and winget upgrade</li>
+<li>sfc /scannow</li>
+<li>dism /Online /Cleanup-Image /RestoreHealth</li>
+<li>chkdsk /r</li>
+<li>ipconfig /flushdns  
+ipconfig /release 
+ipconfig /renew
+<li>netsh winsock reset </li>
+<li>netsh int ip reset  </li>
+netsh int space tcp reset
+<li>powershell "Get-PhysicalDisk | Format-Table FriendlyName, MediaType, HealthStatus, OperationalStatus"</li>
+<li>tasklist
+taskkill /PID [number] /F
+taskkill /IM [processname.exe] /F </li>
+<li>powercfg /energy</li>
+<li>bonus memory test: mdsched</li>
+                    </ul>
+                    
+                    <br><br>
+                </div>
+            </div>            
+    </div>
+
+
+
+
+
+
 <h2>Advanced Windows Tools </h2>
 <p>These are for those doing more complex things.</p>
 
@@ -145,17 +185,24 @@
   <div class=" row">
                 <div class="name">Reduce Spyware</div>
                 <div class="description">
-                    FOSS 
-                    app to block a lot of spyware installed on your windows machine.  
-                    This requires that you assume the risk of these changes. 
-                    You can start the problem and see what options you have, before making changes.
+                    This FOSS 
+                    app will block a lot of spyware installed on your windows machine.  
+                    Also has options to increase performance and security.  
+                    You can pick and choose what you want to do.  
+                    It create a restore point when started, in case something goes wrong. 
+                    <br>
+                    You can start the app and see what options you have, before making changes.
                     Maybe watch this video first: 
                     <br><a href="https://www.youtube.com/watch?v=-E-WC_UvHXE" target="_blank">https://www.youtube.com/watch?v=-E-WC_UvHXE</a> 
+                    <br>
                     <br><br>tl;dr: run this command in powershell in admin mode. 
-                    <br><code>irm "https://christitus.com/win" | iex</code>                        
+                    <br><b><code>irm "https://christitus.com/win" | iex</code></b>
+
                     <br><br><img src="dist/images/powershellforchristitusimage.png" alt="image of powershell " >
                     <p>I ran the 'Tweaks'->'Standard' and added a check to block Adobe</p>
-                    <br><br><img src="dist/images/powershellforchristitustweaks.png" alt="image of powershell " >
+
+                    <br><img src="dist/images/powershellforchristitustweaks.png" alt="image of powershell " >
+
                     
                 </div>
         </div>
