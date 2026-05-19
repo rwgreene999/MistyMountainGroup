@@ -73,8 +73,69 @@ body.theme-light {
   --menu-words: #000;
 }
 
-
 body.theme-dark {
+  /* Core dark surfaces */
+  --teal-dark: #151515;
+  /* deeper charcoal */
+  --teal-mid: #1c2330;
+  /* muted blue‑gray */
+  --teal-light: #5c5c5c;
+  /* softened tertiary gray */
+  --teal-accent: #3a8f8a;
+  /* darker, calmer teal */
+
+  /* Neutral borders + backgrounds */
+  --neutral-border: #333333;
+  /* subtle border */
+  --neutral-bg-light: #1a1a1a;
+  /* soft dark panel */
+  --neutral-bg-dark: #0a0a0a;
+  /* deep background */
+
+  /* Text colors (no bright white) */
+  --text-light: #d4d4d4;
+  /* primary text: soft silver */
+  --text-dark: #a8a8a8;
+  /* secondary text: muted gray */
+
+  --gradient-main: linear-gradient(to bottom, var(--teal-mid), var(--teal-dark));
+
+  /* Semantic colors (darkened versions) */
+  --warning: #c0392b;
+  /* deeper red */
+  --success: #239b56;
+  /* darker green */
+
+  /* Links (dark-mode friendly blues) */
+  --link-normal: #6aa8ff;
+  /* softened blue */
+  --link-visited: #7fa0e0;
+  /* muted visited */
+  --link-hover: #a9c9ff;
+  /* gentle hover */
+  --link-active: #3b6fc7;
+  /* darker active */
+
+  /* Buttons */
+  --button-bg: #4e4e4e;
+  /* muted gray */
+  --button-border: #303030;
+  /* subtle border */
+
+  /* Glow / focus ring */
+  --glow-accent: 0 0 10px #6aa8ff;
+
+  /* Borders */
+  --border-strong: #444444;
+  --border-soft: #2e2e2e;
+
+  /* Menu text */
+  --menu-words: #d4d4d4;
+  /* no bright white */
+}
+
+
+body.theme-darkOld {
   /* Core dark surfaces */
   --teal-dark: #1d1c1c;
   /* Windows dark background */
