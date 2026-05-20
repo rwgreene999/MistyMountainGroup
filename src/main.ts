@@ -6,6 +6,7 @@ console.log(message + ' started at ' + startTime.toLocaleString());
 turnOffMenuSections();
 preloadDataPages();
 goPersonalMenus();
+toggleInternetSafetyText();
 
 
 
@@ -69,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   setInterval(() => {
-    const randomTextString = pickRandomInternetComment();
+
     updateInternetParagraph(pickRandomInternetComment());
   }, 15000);
 
@@ -451,7 +452,7 @@ function pickRandomInternetComment() {
 
   const randomIndex = Math.floor(Math.random() * textStrings.length);
   const randomTextString = textStrings[randomIndex];
-  console.log('pickRandomInternetComment:', randomTextString);
+
   return randomTextString;
 }
 
@@ -477,4 +478,15 @@ function handleQueryParams(queryParams: URLSearchParams) {
   });
 }
 
+
+function toggleInternetSafetyText() {
+  const internetLink = document.getElementById('internetLink');
+  if (!internetLink) return;
+
+  internetLink.textContent = internetLink.textContent === 'Internet  safety' ? 'Internet privacy' : 'Internet  safety';
+
+  // Update the text every 5 seconds
+  setTimeout(toggleInternetSafetyText, 5000);
+
+}
 

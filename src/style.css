@@ -132,6 +132,9 @@ body.theme-dark {
   /* Menu text */
   --menu-words: #d4d4d4;
   /* no bright white */
+
+  --button-text: #ffffff;
+
 }
 
 
@@ -224,6 +227,7 @@ body.theme-purple {
 }
 
 body.theme-gold {
+  --button-text: #000;
   --teal-dark: #4c3a0f;
   --teal-mid: #7a5f1f;
   --teal-light: #b89a4b;
@@ -619,6 +623,8 @@ nav ul li a {
   border: 1px solid var(--button-border);
   border-radius: 10px;
   padding: 3px 10px;
+  color: var(--button-text, var(--text-light));
+  cursor: pointer;
 }
 
 .popup-content {
