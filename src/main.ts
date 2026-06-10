@@ -43,6 +43,7 @@ function isDOMReady(): boolean {
 function preloadDataPages() {
 
   showContents('windowsLink', 'windows', 'windows.html');
+  showContents('androidLink', 'androidSecurity', 'androidSecurity.html');
   showContents('linuxLink', 'linux', 'whylinux.html');
   showContents('internetLink', 'internet', 'internet.html');
   showContents('scamsLink', 'scams', 'scams.html');
@@ -55,6 +56,7 @@ function preloadDataPages() {
 
 document.addEventListener('DOMContentLoaded', () => {
   addMenuClickHandler('windowsLink', 'windows', 'windows.html');
+  addMenuClickHandler('androidLink', 'android', 'androidSecurity.html');
   addMenuClickHandler('linuxLink', 'linux', 'whylinux.html');
   addMenuClickHandler('internetLink', 'internet', 'internet.html');
   addMenuClickHandler('scamsLink', 'scams', 'scams.html');
@@ -85,6 +87,9 @@ function handlePageSelection(selectedPage: string) {
   if (selectedPage === 'scams') {
     document.getElementById('scamsLink')?.click();
   }
+  if (selectedPage === 'android') {
+    document.getElementById('androidLink')?.click();
+  }
   if (selectedPage === 'interesting') {
     document.getElementById('interestingLink')?.click();
   }
@@ -93,6 +98,9 @@ function handlePageSelection(selectedPage: string) {
   }
   if (selectedPage === 'windows') {
     document.getElementById('windowsLink')?.click();
+  }
+  if (selectedPage === 'androidSecurity') {
+    document.getElementById('androidLink')?.click();
   }
   if (selectedPage === 'safety') {
     document.getElementById('internetLink')?.click();
@@ -344,6 +352,7 @@ function getRandomQuoteLocally(): Promise<any> {
       };
     });
 };
+
 
 
 
