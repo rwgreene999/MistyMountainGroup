@@ -43,12 +43,12 @@ function isDOMReady(): boolean {
 function preloadDataPages() {
 
   showContents('windowsLink', 'windows', 'windows.html');
-  showContents('androidLink', 'androidSecurity', 'androidSecurity.html');
   showContents('linuxLink', 'linux', 'whylinux.html');
   showContents('internetLink', 'internet', 'internet.html');
   showContents('scamsLink', 'scams', 'scams.html');
   showContents('interestingLink', 'interesting', 'interesting.html');
   showContents('windowsToolsLink', 'windowsTools', 'windowsTools.html');
+  showContents('androidLink', 'android', 'androidSecurity.html');
   showContents('aboutLink', 'about', 'about.html');
 
 }
@@ -212,7 +212,7 @@ function showContents(linkID: string, divID: string, htmlFile: string) {
         theContent.innerHTML = `Error loading content: ${error.message}`;
       });
   } else {
-    console.error(`Required DOM elements ${linkID}/ ${divID} or ${theContent} not found`);
+    console.error(`showContents() Required DOM elements ${linkID}/ ${divID} or ${theContent} not found`);
   }
 }
 
@@ -392,7 +392,7 @@ function changeGetQuoteWords() {
 }
 
 function SetStyleMode(theme: string) {
-  console.log('SetStyleMode:', theme);
+
   document.body.className = "";
   if (theme !== "default") {
     console.log
@@ -414,13 +414,13 @@ function detectAndApplySystemTheme(): void {
 
   if (darkModeQuery.matches) {
     selectedTheme = 'dark';
-    console.log('System preference: dark mode detected');
+
   } else if (lightModeQuery.matches) {
     selectedTheme = 'light';
-    console.log('System preference: light mode detected');
+
   } else {
     selectedTheme = 'red';
-    console.log('No system preference detected, using red theme');
+
   }
 
   SetStyleMode(selectedTheme);
@@ -428,14 +428,14 @@ function detectAndApplySystemTheme(): void {
   // Optional: Listen for changes in system theme preference
   darkModeQuery.addEventListener('change', (e) => {
     if (e.matches) {
-      console.log('System switched to dark mode');
+
       SetStyleMode('dark');
     }
   });
 
   lightModeQuery.addEventListener('change', (e) => {
     if (e.matches) {
-      console.log('System switched to light mode');
+
       SetStyleMode('light');
     }
   });
