@@ -127,7 +127,6 @@ function handleURLQuery() {
   // const queryParams = new URLSearchParams(window.location.search);
 
   const path = window.location.pathname;
-  console.log('handleURLQuery', path);
 
 
   // const queryParams = new URLSearchParams(path.substring(path.indexOf('?') + 1));
