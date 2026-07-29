@@ -84,38 +84,38 @@ function handlePageSelection(selectedPage: string) {
   if (selectedPage === 'test2') {
     document.getElementById('scamsLink')?.click();
   }
-  if (selectedPage === 'scams') {
+  else if (selectedPage === 'scams') {
     document.getElementById('scamsLink')?.click();
   }
-  if (selectedPage === 'android') {
+  else if (selectedPage === 'android') {
     document.getElementById('androidLink')?.click();
   }
   if (selectedPage === 'interesting') {
     document.getElementById('interestingLink')?.click();
   }
-  if (selectedPage === 'internet') {
+  else if (selectedPage === 'internet') {
     document.getElementById('internetLink')?.click();
   }
-  if (selectedPage === 'windows') {
+  else if (selectedPage === 'windows') {
     document.getElementById('windowsLink')?.click();
   }
-  if (selectedPage === 'androidSecurity') {
+  else if (selectedPage === 'androidSecurity') {
     document.getElementById('androidLink')?.click();
   }
-  if (selectedPage === 'safety') {
+  else if (selectedPage === 'safety') {
     document.getElementById('internetLink')?.click();
   }
-  if (selectedPage === 'windowsTools') {
+  else if (selectedPage === 'windowsTools') {
     document.getElementById('windowsToolsLink')?.click();
   }
-  if (selectedPage === 'tools') {
+  else if (selectedPage === 'tools') {
     document.getElementById('windowsToolsLink')?.click();
   }
 
-  if (selectedPage === 'linux') {
+  else if (selectedPage === 'linux') {
     document.getElementById('linuxLink')?.click();
   }
-  if (selectedPage === 'about') {
+  else if (selectedPage === 'about') {
     document.getElementById('aboutLink')?.click();
   }
 }
@@ -277,7 +277,12 @@ function goInterestingThingsMenu() {
 // Load quotes from local JSON file
 function loadQuotes(): Promise<any> {
   return fetch('dist/data/quotes.json')
-    .then(response => response.json());
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Failed to load quotes: HTTP ${response.status}`);
+      }
+      return response.json();
+    });
 }
 
 function PickQuoteFromList(quotes: any[]): any {
@@ -293,13 +298,17 @@ function getRandomQuoteAndUpdateTextArea() {
   cite!.textContent = "";
   loadQuotes().then(quotes => {
     const quote = PickQuoteFromList(quotes);
-    output.innerHTML = quote.Comment;
+    output.textContent = String(quote.Comment ?? '');
     if (quote.Author.length > 0) {
       cite!.textContent = `Citation: ${quote.Author}`;
     } else {
       cite!.textContent = '';
     }
     // document.getElementById('quoteOutput').innerHTML = `${quote.Comment}\n-- ${quote.Author}`;
+  }).catch(error => {
+    console.error(error);
+    output.textContent = 'Sorry, local quotes are unavailable right now.';
+    cite!.textContent = '';
   });
 }
 
@@ -311,7 +320,7 @@ function _Official_getRandomQuoteAndUpdateTextArea() {
   output.innerHTML = "";
   cite!.textContent = "";
   getRandomQuote().then(quote => {
-    output.innerHTML = quote.Comment;
+    output.textContent = String(quote.Comment ?? '');
     if (quote.Author.length > 0) {
       cite!.textContent = `Citation: ${quote.Author}`;
     } else {
@@ -375,7 +384,7 @@ function OriginalgetRandomQuoteAndUpdateTextArea() {
   getRandomQuote().then(quote => {
     const output = document.getElementById('quoteOutput') as HTMLParagraphElement;
     const cite = document.getElementById('quoteCite');
-    output.innerHTML = quote.Comment;
+    output.textContent = String(quote.Comment ?? '');
     if (quote.Author.length > 0) {
       cite!.textContent = `Citation: ${quote.Author}`;
     } else {
