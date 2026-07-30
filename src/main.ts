@@ -3,10 +3,39 @@
 const message: string = "Hello, TypeScript! 8.a";
 const startTime = new Date();
 console.log(message + ' started at ' + startTime.toLocaleString());
-turnOffMenuSections();
-preloadDataPages();
-goPersonalMenus();
-toggleInternetSafetyText();
+
+type MenuGroup = 'personal' | 'digitalSafety' | 'interesting';
+
+interface MenuItem {
+  menuId: string;
+  linkId: string;
+  sectionId?: string;
+  htmlFile?: string;
+  groupToShow?: MenuGroup;
+  aliases?: string[];
+}
+
+const MENU_ITEMS: MenuItem[] = [
+  { menuId: 'home', linkId: 'homeLink', sectionId: 'home', groupToShow: 'personal', aliases: [''] },
+  { menuId: 'digitalSafetyMenu', linkId: 'digitalSafetyMenuLink', sectionId: 'digitalSafety', groupToShow: 'digitalSafety', aliases: ['safety'] },
+  { menuId: 'interestingMenu', linkId: 'interestingMenuLink', sectionId: 'interestingMain', groupToShow: 'interesting' },
+  { menuId: 'scams', linkId: 'scamsLink', sectionId: 'scams', htmlFile: 'scams.html', groupToShow: 'digitalSafety', aliases: ['test2'] },
+  { menuId: 'internet', linkId: 'internetLink', sectionId: 'internet', htmlFile: 'internet.html', groupToShow: 'digitalSafety', aliases: ['internet', 'safety'] },
+  { menuId: 'windows', linkId: 'windowsLink', sectionId: 'windows', htmlFile: 'windows.html', groupToShow: 'digitalSafety' },
+  { menuId: 'android', linkId: 'androidLink', sectionId: 'android', htmlFile: 'androidSecurity.html', groupToShow: 'digitalSafety', aliases: ['androidSecurity'] },
+  { menuId: 'linux', linkId: 'linuxLink', sectionId: 'linux', htmlFile: 'whylinux.html', groupToShow: 'digitalSafety' },
+  { menuId: 'windowsTools', linkId: 'windowsToolsLink', sectionId: 'windowsTools', htmlFile: 'windowsTools.html', groupToShow: 'interesting', aliases: ['tools'] },
+  { menuId: 'interesting', linkId: 'interestingLink', sectionId: 'interesting', htmlFile: 'interesting.html', groupToShow: 'interesting' },
+  { menuId: 'about', linkId: 'aboutLink', sectionId: 'about', htmlFile: 'about.html', groupToShow: 'personal' }
+];
+
+const MENU_ITEMS_BY_ID = new Map(MENU_ITEMS.map(item => [item.menuId.toLowerCase(), item]));
+const MENU_ALIASES = new Map<string, string>();
+
+for (const item of MENU_ITEMS) {
+  MENU_ALIASES.set(item.menuId.toLowerCase(), item.menuId);
+  (item.aliases ?? []).forEach(alias => MENU_ALIASES.set(alias.toLowerCase(), item.menuId));
+}
 
 
 
@@ -41,28 +70,19 @@ function isDOMReady(): boolean {
 
 
 function preloadDataPages() {
-
-  showContents('windowsLink', 'windows', 'windows.html');
-  showContents('linuxLink', 'linux', 'whylinux.html');
-  showContents('internetLink', 'internet', 'internet.html');
-  showContents('scamsLink', 'scams', 'scams.html');
-  showContents('interestingLink', 'interesting', 'interesting.html');
-  showContents('windowsToolsLink', 'windowsTools', 'windowsTools.html');
-  showContents('androidLink', 'android', 'androidSecurity.html');
-  showContents('aboutLink', 'about', 'about.html');
-
+  for (const item of MENU_ITEMS) {
+    if (item.htmlFile && item.sectionId) {
+      showContents(item.linkId, item.sectionId, item.htmlFile);
+    }
+  }
 }
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  addMenuClickHandler('windowsLink', 'windows', 'windows.html');
-  addMenuClickHandler('androidLink', 'android', 'androidSecurity.html');
-  addMenuClickHandler('linuxLink', 'linux', 'whylinux.html');
-  addMenuClickHandler('internetLink', 'internet', 'internet.html');
-  addMenuClickHandler('scamsLink', 'scams', 'scams.html');
-  addMenuClickHandler('interestingLink', 'interesting', 'interesting.html');
-  addMenuClickHandler('windowsToolsLink', 'windowsTools', 'windowsTools.html');
-  addMenuClickHandler('aboutLink', 'about', 'about.html');
+  initMenuSystem();
+  preloadDataPages();
+  activateMenuItem('home');
+  toggleInternetSafetyText();
   console.log('DOM fully loaded and parsed');
 
   // Detect and apply system theme
@@ -80,44 +100,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 function handlePageSelection(selectedPage: string) {
-
-  if (selectedPage === 'test2') {
-    document.getElementById('scamsLink')?.click();
-  }
-  else if (selectedPage === 'scams') {
-    document.getElementById('scamsLink')?.click();
-  }
-  else if (selectedPage === 'android') {
-    document.getElementById('androidLink')?.click();
-  }
-  if (selectedPage === 'interesting') {
-    document.getElementById('interestingLink')?.click();
-  }
-  else if (selectedPage === 'internet') {
-    document.getElementById('internetLink')?.click();
-  }
-  else if (selectedPage === 'windows') {
-    document.getElementById('windowsLink')?.click();
-  }
-  else if (selectedPage === 'androidSecurity') {
-    document.getElementById('androidLink')?.click();
-  }
-  else if (selectedPage === 'safety') {
-    document.getElementById('internetLink')?.click();
-  }
-  else if (selectedPage === 'windowsTools') {
-    document.getElementById('windowsToolsLink')?.click();
-  }
-  else if (selectedPage === 'tools') {
-    document.getElementById('windowsToolsLink')?.click();
-  }
-
-  else if (selectedPage === 'linux') {
-    document.getElementById('linuxLink')?.click();
-  }
-  else if (selectedPage === 'about') {
-    document.getElementById('aboutLink')?.click();
-  }
+  const resolvedMenuId = MENU_ALIASES.get(selectedPage.toLowerCase());
+  if (!resolvedMenuId) return;
+  activateMenuItem(resolvedMenuId);
 }
 
 
@@ -149,42 +134,44 @@ function handleURLQuery() {
 
 
 
-function addMenuClickHandler(linkID: string, divID: string, htmlFile: string): void {
-  const theLink: HTMLElement | null = document.getElementById(linkID);
-  const theContent: HTMLElement | null = document.getElementById(divID);
+function initMenuSystem(): void {
+  const menuElement = document.querySelector('.menu');
+  if (!menuElement) {
+    console.error('Menu element not found');
+    return;
+  }
 
-  console.log(`addMenuClickHandler linkID=${linkID} divID=${divID} htmlFile=${htmlFile}`);
+  menuElement.addEventListener('click', (e: Event) => {
+    const target = e.target as HTMLElement;
+    const menuItemElement = target.closest('[data-menu-id]') as HTMLElement | null;
+    if (!menuItemElement) return;
 
-  if (theLink && theContent) {
+    const menuId = menuItemElement.dataset.menuId;
+    if (!menuId) return;
 
-    theLink.addEventListener('click', (e: Event) => {
-      e.preventDefault();
-      e.stopPropagation();
-      showContents(linkID, divID, htmlFile);
+    e.preventDefault();
+    e.stopPropagation();
+    activateMenuItem(menuId);
+  });
+}
 
+function activateMenuItem(menuId: string): void {
+  const item = MENU_ITEMS_BY_ID.get(menuId.toLowerCase());
+  if (!item) {
+    console.error(`Unknown menu item: ${menuId}`);
+    return;
+  }
 
-      // fetch('dist/' + htmlFile)
-      //   .then((response: Response) => {
-      //     if (!response.ok) {
-      //       throw new Error('Network response was not ok');
-      //     }
-      //     return response.text();
-      //   })
-      //   .then((data: string) => {
+  if (item.groupToShow) {
+    setVisibleSubmenuGroup(item.groupToShow);
+  }
 
-      //     console.log(`got data len=${data.length}`);
+  if (item.sectionId) {
+    showMainContent(item.sectionId);
+  }
 
-      //     theContent.innerHTML = data;
-      //     console.log(`loaded`);
-
-      //   })
-      //   .catch((error: Error) => {
-      //     theContent.innerHTML = `Error loading content: ${error.message}`;
-      //   });
-    });
-
-  } else {
-    console.error(`Required DOM elements ${theLink}/ ${theLink} or ${theContent} not found`);
+  if (item.htmlFile && item.sectionId) {
+    showContents(item.linkId, item.sectionId, item.htmlFile);
   }
 }
 
@@ -217,60 +204,36 @@ function showContents(linkID: string, divID: string, htmlFile: string) {
 
 
 function turnOffMenuSections() {
+  setVisibleSubmenuGroup(null);
+}
 
-  const personalStuffElements = document.querySelectorAll('.personalStuff') as NodeListOf<HTMLElement>;
-  const digitalSafetyStuffElements = document.querySelectorAll('.digitalSafetyStuff') as NodeListOf<HTMLElement>;
-  const interestingThings = document.querySelectorAll('.interestingThingsStuff') as NodeListOf<HTMLElement>;
 
-  personalStuffElements.forEach((element) => {
-    element.style.display = 'none';
+function setVisibleSubmenuGroup(group: MenuGroup | null): void {
+  const groupedItems = document.querySelectorAll('[data-menu-group]') as NodeListOf<HTMLElement>;
 
+  groupedItems.forEach((element) => {
+    if (!group) {
+      element.style.display = 'none';
+      return;
+    }
+
+    element.style.display = element.dataset.menuGroup === group ? 'initial' : 'none';
   });
-
-
-  digitalSafetyStuffElements.forEach((element) => {
-    element.style.display = 'none';
-  });
-
-  interestingThings.forEach((element) => {
-    element.style.display = 'none';
-  });
-
-
 }
 
 
 function goDigitalMenus() {
-
-  turnOffMenuSections();
-  const digitalSafetyStuffElements = document.querySelectorAll('.digitalSafetyStuff') as NodeListOf<HTMLElement>;
-
-  digitalSafetyStuffElements.forEach((element) => {
-    element.style.display = 'initial';
-  });
+  setVisibleSubmenuGroup('digitalSafety');
 };
 
 
 
 function goPersonalMenus() {
-
-  turnOffMenuSections();
-  const personalStuffElements = document.querySelectorAll('.personalStuff') as NodeListOf<HTMLElement>;
-
-  personalStuffElements.forEach((element) => {
-    element.style.display = 'initial';
-  });
-
+  setVisibleSubmenuGroup('personal');
 }
 
 function goInterestingThingsMenu() {
-
-  turnOffMenuSections();
-  const interestingThingsStuffElements = document.querySelectorAll('.interestingThingsStuff') as NodeListOf<HTMLElement>;
-
-  interestingThingsStuffElements.forEach((element) => {
-    element.style.display = 'initial';
-  });
+  setVisibleSubmenuGroup('interesting');
 }
 
 
