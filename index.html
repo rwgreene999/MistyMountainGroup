@@ -27,36 +27,35 @@
         <nav>
             <ul class="menu">
 
-                <li class="menu-item" onclick="showMainContent('home'); goPersonalMenus();">Home</li>
+                <li class="menu-item" id="homeLink" data-menu-id="home">Home</li>
 
-                <li class="menu-item " onclick="showMainContent('digitalSafety');
-                        goDigitalMenus();">Digital Safety
+                <li class="menu-item" id="digitalSafetyMenuLink" data-menu-id="digitalSafetyMenu">Digital Safety
                     <ul class="submenu">
-                        <li class="menu-item digitalSafetyStuff" id="scamsLink" onclick="showMainContent('scams');">
+                        <li class="menu-item digitalSafetyStuff" id="scamsLink" data-menu-id="scams" data-menu-group="digitalSafety">
                             Scams</li>
                         <li class="menu-item digitalSafetyStuff" id="internetLink"
-                            onclick="showMainContent('internet'); ">Internet  safety</li>
-                        <li class="menu-item digitalSafetyStuff" id="windowsLink" onclick="showMainContent('windows')">
+                            data-menu-id="internet" data-menu-group="digitalSafety">Internet  safety</li>
+                        <li class="menu-item digitalSafetyStuff" id="windowsLink" data-menu-id="windows" data-menu-group="digitalSafety">
                             Windows security</li>
-                            <li class="menu-item digitalSafetyStuff" id="androidLink" onclick="showMainContent('android')">
+                            <li class="menu-item digitalSafetyStuff" id="androidLink" data-menu-id="android" data-menu-group="digitalSafety">
                             Android security</li>   
-                        <li class="menu-item digitalSafetyStuff" id="linuxLink" onclick="showMainContent('linux')">
+                        <li class="menu-item digitalSafetyStuff" id="linuxLink" data-menu-id="linux" data-menu-group="digitalSafety">
                             Going To Linux</li>
                     </ul>
 
                 </li>
 
-                <li class="menu-item " onclick="showMainContent('interestingMain'); goInterestingThingsMenu();">
+                <li class="menu-item" id="interestingMenuLink" data-menu-id="interestingMenu">
                     Interesting
                     <ul class="submenu">
                         <li class="menu-item interestingThingsStuff" id="windowsToolsLink"
-                            onclick="showMainContent('windowsTools');">Windows tools</li>
+                            data-menu-id="windowsTools" data-menu-group="interesting">Windows tools</li>
                         <li class="menu-item interestingThingsStuff" id="interestingLink"
-                            onclick="showMainContent('interesting')">Interesting Things</li>
+                            data-menu-id="interesting" data-menu-group="interesting">Interesting Things</li>
                     </ul>
                 </li>
 
-                <li class="menu-item personalStuff" ID='aboutLink' onclick="showMainContent('about')">About Me</li>
+                <li class="menu-item personalStuff" id="aboutLink" data-menu-id="about" data-menu-group="personal">About Me</li>
 
             </ul>
 
