@@ -1,5 +1,5 @@
 <article>
-    <h1>My Essential Microsoft Windows Computer Security Guide</h1>
+    <h1>Essential Microsoft Windows Computer Security Guide</h1>
 
 
     <div comment="Windows Security: Your Built-in Defender">
@@ -97,6 +97,133 @@
         </div>
     </div>
 
+
+
+
+    <div comment="BitLocker: Encrypt Your Drive Data ">
+        <hr>
+        <h3>BitLocker: Encrypt Your Drive Data</h3>
+        <p>BitLocker is a technology to secure your drive from someone who steals your computer.
+            If it is not turned on, you may want to consider turning it on.
+            If it is turned on (most likely on a new computer), you need to take action to secure your data. 
+            This is because Microsoft has your Bitlocker keys, and if you ever need to reinstall Windows, you will need those keys to access your data. 
+        
+
+        <button id="showbitLocker" class="mybutton" onclick="showExtended('bitLocker')">
+            ℹ️ Learn About Bitlocker
+        </button>
+        <div id="bitLocker" class='extendedComment'>
+
+
+            <p>BitLocker
+                <span class="popup-trigger">
+                    <strong>encryptsℹ️</strong>
+                    <span class="popup-content">
+                        Encryption is the process turning readable information into unreadable information, unless the
+                        <i>key</i> is known.
+                    </span>
+                </span>
+                your 
+                
+            <span class="popup-trigger">
+                Driveℹ️ 
+                <span class="popup-content">
+                    A drive is a storage device like a HDD (hard drive) or SSD.
+                    This is how your computer remembers everything after you power off your machine
+                </span>
+            </span>
+
+                , securing your data even if your computer is stolen or if the drive is removed from
+                your computer.
+            </p>
+
+            <p>
+                <i>Is it necessary for you to use BitLocker?</i>
+                If your computer was issued to you by a corporation, BitLocker is probably already installed. This is now your companies responsibility. 
+                You most likely enter a password at the
+                power on of your computer before you really get started with a log in.
+            </p>
+
+            <p> If you bought a computer recently Bitlocker may already be installed.</p>
+
+            <p>
+                If this is your computer, you need to <b>consider the implications of BitLocker</b>.
+                If you keep sensitive information on your computer, especially if you travel with your computer, you may consider implementing Bitlocker.
+            </p>
+
+
+
+
+
+            <p>
+                When you set up your computer,
+                Microsoft encouraged you to create a Microsoft account and at that point they may ask to encrypt your drive, or they may just encrypt it. 
+                The BitLocker <i>'unlock key'</i> is attached to your Microsoft account. 
+                You need this key. 
+            </p>
+
+            <p>If BitLocker is active on your machine, <b>you absolutely need to get the BitLocker Recovery Codes.</b>. <i>Seriously, do not skip this step.</i>
+                Those keys allow access to your hard drive even if
+                your machine fails, and you move your drive to another computer.
+                Those Recovery Codes are also necessary if you
+                need to reinstall Windows on your machine.
+                And sometimes, you just have to use the keys to get back into your machine.
+                To get these Recovery Codes you log into your Microsoft account and access
+                <a href="https://account.microsoft.com/devices/recoverykey" target="_blank"
+                    rel="noopener noreferrer">https://account.microsoft.com/devices/recoverykey</a>
+                Write down the recovery keys, and store them somewhere safe.
+            </p>
+
+            <p>To see if BitLocker is active on your machine, go to settings -> security & privacy -> BitLocker</p>
+
+            TL:DR;</p>
+            <ul>
+                <li>You need to use your Microsoft account</li>
+                <li>Open Bitlocker Drive ( settings -> search for bitlocker ) </li>
+                <li>If BitLocker is active, get your recovery codes (see above) </li>
+                <li>If you decide to BitLocker your drive, this is your spot.</li>
+                <li>Remember to back up your recovery codes on paper (not on your machine).</li>
+            </ul>
+
+        </div>
+
+
+
+        <hr>
+        <div comment="Account Security">
+            <h2>Account Security</h2>
+            <p>There are a few things to know about your computer's security</p>
+            <button id="showwindowsAccountSecurity" class="mybutton" onclick="showExtended('windowsAccountSecurity')">
+                ℹ️ More about your windows account security!
+            </button>
+
+            <div id="windowsAccountSecurity" class='extendedComment'>
+                <p>Consider the following for your Windows machine's security:</p>
+                <ul>
+                    <li>Microsoft wants you to use their access for login to your computer</li>
+                    <li>Be cautious with biometric security like Windows Hello</li>
+                    <li><i>I am not a fan of biometrics, does your fingerprint work if you cut your hand? does you face
+                            work if you have a fever? If you are passout drunk, will you wake you the next day finding
+                            out
+                            someone used your face to log in and ordered 20 pizzas? </i></li>
+                    <li>Will the law or the bad guy hold your phone or windows up to your face, log into your account
+                        and view your private comments?</li>
+                    <li>Microsoft desires to backup your work to the cloud, which is unencrypted</li>
+                    <li></li>
+
+                    <li>Solutions: </li>
+                    <ul>
+                        <li>Create local accounts</li>
+                        <li>Store important files like your bank account pdfs in your folders, not the default folders
+                        </li>
+                        <li>At this writing, I don't know how to control OneDrive backups, so I uninstalled OneDrive!
+                        </li>
+                    </ul>
+                </ul>
+            </div>
+        </div>
+    </div>
+
     <div comment="Microsoft 'Recall' Product">
         <hr>
         <h3>Microsoft Recall, are you sure?</h3>
@@ -105,6 +232,10 @@
             The stated purpose is to provide you with a history of your actions.
             The secondary reason is to allow an AI learn how to help you in your daily chores.
         </p>
+
+        <p>As of July 30,2026 'Recall' is not standard on most machines, just "Copilot+ PCs" which is an upgraded PC with an NPU.
+             Most people have little to worry about.</p>
+
         <p>The question to ask yourself is, do you want Microsoft recording everything you do on your computer?
         </p>
         <button id="showRecall" class="mybutton" onclick="showExtended('ms-recall')">
@@ -209,126 +340,6 @@
 
 
     </div>
-
-
-    <div comment="BitLocker: Encrypt Your Drive Data">
-        <hr>
-        <h3>BitLocker: Encrypt Your Drive Data</h3>
-        <p>BitLocker is a technology to secure your drive from someone who steals your computer.
-            If it is turned on (most likely on a new computer), you need to take action to secure your data. If it is not turned on, you may want to consider turning it on.
-        </p>
-
-        <button id="showbitLocker" class="mybutton" onclick="showExtended('bitLocker')">
-            ℹ️ Learn About Bitlocker
-        </button>
-        <div id="bitLocker" class='extendedComment'>
-            <span class="popup-trigger">
-                ℹ️ What is a 'drive' anyway????
-                <span class="popup-content">
-                    A drive is a storage device like a HDD (hard drive) or SSD.
-                    This is how your computer remembers everything after you power off your machine
-                </span>
-            </span>
-
-
-            <p>BitLocker
-                <span class="popup-trigger">
-                    <strong>encryptsℹ️</strong>
-                    <span class="popup-content">
-                        Encryption is the process turning readable information into unreadable information, unless the
-                        <i>key</i> is known.
-                    </span>
-                </span>
-                your drive, securing your data even if your computer is stolen or if the drive is removed from
-                your computer.
-            </p>
-
-            <p>
-                <i>Is it necessary for you to use BitLocker?</i>
-                If your computer was issued to you by a corporation, BitLocker is probably already installed. This is now your companies responsibility. 
-                You most likely enter a password at the
-                power on of your computer before you really get started with a log in.
-            </p>
-
-            <p> If you bought a computer recently Bitlocker may already be installed.</p>
-
-            <p>
-                If this is your computer, you need to <b>consider the implications of BitLocker</b>.
-                If you keep sensitive information on your computer, especially if you travel with your computer, you may consider implementing Bitlocker.
-            </p>
-
-
-
-
-
-            <p>
-                When you set up your computer,
-                Microsoft encouraged you to create a Microsoft account and at that point they may ask to encrypt your drive, or they may just encrypt it. 
-                The BitLocker <i>'unlock key'</i> is attached to your Microsoft account. 
-                You need this key. 
-            </p>
-
-            <p>If BitLocker is active on your machine, <b>you absolutely need to get the BitLocker Recovery Codes.</b>. <i>Seriously, do not skip this step.</i>
-                Those keys allow access to your hard drive even if
-                your machine fails, and you move your drive to another computer.
-                Those Recovery Codes are also necessary if you
-                need to reinstall Windows on your machine.
-                And sometimes, you just have to use the keys to get back into your machine.
-                To get these Recovery Codes you log into your Microsoft account and access
-                <a href="https://account.microsoft.com/devices/recoverykey" target="_blank"
-                    rel="noopener noreferrer">https://account.microsoft.com/devices/recoverykey</a>
-                Write down the recovery keys, and store them somewhere safe.
-            </p>
-
-            <p>To see if BitLocker is active on your machine, go to settings -> security & privacy -> BitLocker</p>
-
-            TL:DR;</p>
-            <ul>
-                <li>You need to use your Microsoft account</li>
-                <li>Open Bitlocker Drive ( settings -> search for bitlocker ) </li>
-                <li>If BitLocker is active, get your recovery codes (see above) </li>
-                <li>If you decide to BitLocker your drive, this is your spot.</li>
-                <li>Remember to back up your recovery codes on paper (not on your machine).</li>
-            </ul>
-
-        </div>
-
-        <hr>
-        <div comment="Account Security">
-            <h2>Account Security</h2>
-            <p>There are a few things to know about your computer's security</p>
-            <button id="showwindowsAccountSecurity" class="mybutton" onclick="showExtended('windowsAccountSecurity')">
-                ℹ️ More about your windows account security!
-            </button>
-
-            <div id="windowsAccountSecurity" class='extendedComment'>
-                <p>Consider the following for your Windows machine's security:</p>
-                <ul>
-                    <li>Microsoft wants you to use their access for login to your computer</li>
-                    <li>Be cautious with biometric security like Windows Hello</li>
-                    <li><i>I am not a fan of biometrics, does your fingerprint work if you cut your hand? does you face
-                            work if you have a fever? If you are passout drunk, will you wake you the next day finding
-                            out
-                            someone used your face to log in and ordered 20 pizzas? </i></li>
-                    <li>Will the law or the bad guy hold your phone or windows up to your face, log into your account
-                        and view your private comments?</li>
-                    <li>Microsoft desires to backup your work to the cloud, which is unencrypted</li>
-                    <li></li>
-
-                    <li>Solutions: </li>
-                    <ul>
-                        <li>Create local accounts</li>
-                        <li>Store important files like your bank account pdfs in your folders, not the default folders
-                        </li>
-                        <li>At this writing, I don't know how to control OneDrive backups, so I uninstalled OneDrive!
-                        </li>
-                    </ul>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-
 
     <div comment="Browser Security">
         <hr>
