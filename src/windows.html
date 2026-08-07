@@ -6,7 +6,8 @@
         <hr>
         <h2>Anti Malware (anti-virus) choice</h2>
         <h3>Windows Security: The Built-in Defender</h3>
-        <p>Microsoft's "Windows Security" is a free, built-in tool, that provides comprehensive protection for your Windows machine.</p>
+        <p>Microsoft's "Windows Security" is a free, built-in tool, that provides comprehensive protection for your
+            Windows machine.</p>
 
         <button id="showwindowsSecurity" class="mybutton" onclick="showExtended('windowsSecurity')">
             ℹ️ More about antivirus and malware protection!
@@ -70,7 +71,8 @@
     <div comment="Removing Pre-installed Antivirus">
         <hr>
         <h3>Got a new computer with preinstalled anti-virus?</h3>
-        <p>If you bought a new computer it most likely it comes with a pre-installed antivirus program. Consider removing it in favor of Microsoft Security.</p>
+        <p>If you bought a new computer it most likely it comes with a pre-installed antivirus program. Consider
+            removing it in favor of Microsoft Security.</p>
         <button id="showremovePreinstalledAntivirus" class="mybutton"
             onclick="showExtended('removePreinstalledAntivirus')">
             ℹ️ More about pre installed antivirus and malware
@@ -105,33 +107,28 @@
         <h3>BitLocker: Encrypt Your Drive Data</h3>
         <p>BitLocker is a technology to secure your drive from someone who steals your computer.
             If it is not turned on, you may want to consider turning it on.
-            If it is turned on (most likely on a new computer), you need to take action to secure your data. 
-            This is because Microsoft has your Bitlocker keys, and if you ever need to reinstall Windows, you will need those keys to access your data. 
-        
+            If it is turned on (most likely on a new computer), you need to take action to secure your data.
+            This is because Microsoft has your Bitlocker keys, and if you ever need to reinstall Windows, you will need
+            those keys to access your data.
 
-        <button id="showbitLocker" class="mybutton" onclick="showExtended('bitLocker')">
-            ℹ️ Learn About Bitlocker
-        </button>
+
+            <button id="showbitLocker" class="mybutton" onclick="showExtended('bitLocker')">
+                ℹ️ Learn About Bitlocker
+            </button>
         <div id="bitLocker" class='extendedComment'>
-
-
             <p>BitLocker
-                <span class="popup-trigger">
-                    <strong>encryptsℹ️</strong>
-                    <span class="popup-content">
-                        Encryption is the process turning readable information into unreadable information, unless the
-                        <i>key</i> is known.
-                    </span>
-                </span>
-                your 
+
+                <strong>encrypts</strong>
+
+                <span class="popup-trigger" 
+                    data-popup="Encryption is the process turning readable information into unreadable information, unless the is known.">
+                    </span> 
                 
-            <span class="popup-trigger">
-                Driveℹ️ 
-                <span class="popup-content">
-                    A drive is a storage device like a HDD (hard drive) or SSD.
-                    This is how your computer remembers everything after you power off your machine
-                </span>
-            </span>
+                your Drive
+                
+            <span class=" popup-trigger" data-popup="A drive is a storage device like a HDD (hard drive) or SSD.
+                    This is how your computer remembers everything after you power off your machine.">  </span>
+
 
                 , securing your data even if your computer is stolen or if the drive is removed from
                 your computer.
@@ -139,7 +136,8 @@
 
             <p>
                 <i>Is it necessary for you to use BitLocker?</i>
-                If your computer was issued to you by a corporation, BitLocker is probably already installed. This is now your companies responsibility. 
+                If your computer was issued to you by a corporation, BitLocker is probably already installed. This is
+                now your companies responsibility.
                 You most likely enter a password at the
                 power on of your computer before you really get started with a log in.
             </p>
@@ -148,7 +146,8 @@
 
             <p>
                 If this is your computer, you need to <b>consider the implications of BitLocker</b>.
-                If you keep sensitive information on your computer, especially if you travel with your computer, you may consider implementing Bitlocker.
+                If you keep sensitive information on your computer, especially if you travel with your computer, you may
+                consider implementing Bitlocker.
             </p>
 
 
@@ -157,12 +156,14 @@
 
             <p>
                 When you set up your computer,
-                Microsoft encouraged you to create a Microsoft account and at that point they may ask to encrypt your drive, or they may just encrypt it. 
-                The BitLocker <i>'unlock key'</i> is attached to your Microsoft account. 
-                You need this key. 
+                Microsoft encouraged you to create a Microsoft account and at that point they may ask to encrypt your
+                drive, or they may just encrypt it.
+                The BitLocker <i>'unlock key'</i> is attached to your Microsoft account.
+                You need this key.
             </p>
 
-            <p>If BitLocker is active on your machine, <b>you absolutely need to get the BitLocker Recovery Codes.</b>. <i>Seriously, do not skip this step.</i>
+            <p>If BitLocker is active on your machine, <b>you absolutely need to get the BitLocker Recovery Codes.</b>.
+                <i>Seriously, do not skip this step.</i>
                 Those keys allow access to your hard drive even if
                 your machine fails, and you move your drive to another computer.
                 Those Recovery Codes are also necessary if you
@@ -233,8 +234,9 @@
             The secondary reason is to allow an AI learn how to help you in your daily chores.
         </p>
 
-        <p>As of July 30,2026 'Recall' is not standard on most machines, just "Copilot+ PCs" which is an upgraded PC with an NPU.
-             Most people have little to worry about.</p>
+        <p>As of July 30,2026 'Recall' is not standard on most machines, just "Copilot+ PCs" which is an upgraded PC
+            with an NPU.
+            Most people have little to worry about.</p>
 
         <p>The question to ask yourself is, do you want Microsoft recording everything you do on your computer?
         </p>
@@ -333,7 +335,7 @@
                     <li>Note: Microsoft may change things, and even reinstall Recall during a security update, so
                         recheck from time to time. Also instructions might change. This information is the best I can
                         find on Dec 25, 2025</li>
-            </ul>
+                </ul>
 
         </div>
 
@@ -344,20 +346,13 @@
     <div comment="Browser Security">
         <hr>
         <h2>Web Browser Security</h2>
-        <p>Web Browsers are your gateway to the internet. Don't leave it open.
+        <p>Web Browsers
+            <span class="popup-trigger" data-popup="A browser is a program like Chrome or Safari than enables you to log into websites and access data, information and entertainment."></span>
+            are your gateway to the internet. Don't leave it open.
+
             <button id="showwebBrowserSecurity" class="mybutton" onclick="showExtended('webBrowserSecurity')">
                 ℹ️ More web browser security
             </button>
-
-
-            <span class="popup-trigger">
-                ℹ️ What is a 'browser' anyway????
-                <span class="popup-content">
-                    A browser is a program like Chrome or Safari than enables you to log into websites and access data,
-                    informaiton and entertainment.
-                </span>
-            </span>
-
 
         <div id="webBrowserSecurity" class='extendedComment'>
             <p>
