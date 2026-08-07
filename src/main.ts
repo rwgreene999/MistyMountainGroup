@@ -37,7 +37,7 @@ for (const item of MENU_ITEMS) {
   (item.aliases ?? []).forEach(alias => MENU_ALIASES.set(alias.toLowerCase(), item.menuId));
 }
 
-
+preloadDataPages();
 
 function showExtended(divTag: string) {
   console.log('showExtended:', divTag);
@@ -63,15 +63,11 @@ function showMainContent(sectionId: string): void {
 
 }
 
-function isDOMReady(): boolean {
-  console.log('isDOMReady', new Date());
-  return document.readyState === 'interactive' || document.readyState === 'complete';
-}
-
 
 function preloadDataPages() {
   for (const item of MENU_ITEMS) {
     if (item.htmlFile && item.sectionId) {
+      console.log(`Preloading ${item.htmlFile} for section ${item.sectionId}`);
       showContents(item.linkId, item.sectionId, item.htmlFile);
     }
   }
@@ -91,12 +87,43 @@ document.addEventListener('DOMContentLoaded', () => {
   handleURLQuery();
 
 
+
   setInterval(() => {
 
     updateInternetParagraph(pickRandomInternetComment());
   }, 15000);
+  hookAllPopupTriggers();
 
 });
+
+function hookAllPopupTriggers(root: ParentNode = document): void {
+  const triggers = root.querySelectorAll<HTMLSpanElement>('.popup-trigger');
+  console.log('hookAllPopupTriggers: Found', triggers.length, 'popup triggers');
+
+  triggers.forEach((el) => {
+    if (el.getAttribute('data-popup-hooked') === 'true') {
+      return;
+    }
+
+    el.setAttribute('data-popup-hooked', 'true');
+
+    const popupContent = el.querySelector<HTMLElement>(':scope > .popup-content');
+    if (!popupContent) {
+      const content = document.createElement('span');
+      content.className = 'popup-content';
+      content.textContent = el.dataset.popup ?? '';
+      el.appendChild(content);
+    }
+
+    if (!el.querySelector<HTMLElement>(':scope > .info-icon')) {
+      const icon = document.createElement('span');
+      icon.className = 'info-icon';
+      el.insertBefore(icon, el.firstChild);
+    }
+  });
+}
+
+
 
 
 function handlePageSelection(selectedPage: string) {
@@ -193,6 +220,7 @@ function showContents(linkID: string, divID: string, htmlFile: string) {
       })
       .then((data: string) => {
         theContent.innerHTML = data;
+        hookAllPopupTriggers(theContent);
       })
       .catch((error: Error) => {
         theContent.innerHTML = `Error loading content: ${error.message}`;
@@ -469,4 +497,3 @@ function toggleInternetSafetyText() {
   setTimeout(toggleInternetSafetyText, 5000);
 
 }
-
