@@ -37,8 +37,6 @@ for (const item of MENU_ITEMS) {
   (item.aliases ?? []).forEach(alias => MENU_ALIASES.set(alias.toLowerCase(), item.menuId));
 }
 
-preloadDataPages();
-
 function showExtended(divTag: string) {
   console.log('showExtended:', divTag);
   const selectedID = document.getElementById(divTag);
@@ -93,6 +91,12 @@ document.addEventListener('DOMContentLoaded', () => {
     updateInternetParagraph(pickRandomInternetComment());
   }, 15000);
   hookAllPopupTriggers();
+  document.addEventListener('click', closePopupTriggers);
+  document.addEventListener('keydown', (event: KeyboardEvent) => {
+    if (event.key === 'Escape') {
+      closePopupTriggers();
+    }
+  });
 
 });
 
@@ -106,6 +110,7 @@ function hookAllPopupTriggers(root: ParentNode = document): void {
     }
 
     el.setAttribute('data-popup-hooked', 'true');
+    el.tabIndex = 0;
 
     const popupContent = el.querySelector<HTMLElement>(':scope > .popup-content');
     if (!popupContent) {
@@ -120,6 +125,28 @@ function hookAllPopupTriggers(root: ParentNode = document): void {
       icon.className = 'info-icon';
       el.insertBefore(icon, el.firstChild);
     }
+
+    el.addEventListener('click', (event: Event) => {
+      event.stopPropagation();
+      el.classList.toggle('is-open');
+    });
+
+    el.addEventListener('keydown', (event: KeyboardEvent) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        el.classList.toggle('is-open');
+      }
+
+      if (event.key === 'Escape') {
+        el.classList.remove('is-open');
+      }
+    });
+  });
+}
+
+function closePopupTriggers(): void {
+  document.querySelectorAll<HTMLElement>('.popup-trigger.is-open').forEach((trigger) => {
+    trigger.classList.remove('is-open');
   });
 }
 
@@ -162,13 +189,13 @@ function handleURLQuery() {
 
 
 function initMenuSystem(): void {
-  const menuElement = document.querySelector('.menu');
-  if (!menuElement) {
-    console.error('Menu element not found');
+  const menuElements = document.querySelectorAll('[data-menu-id]');
+  if (menuElements.length === 0) {
+    console.error('Menu elements not found');
     return;
   }
 
-  menuElement.addEventListener('click', (e: Event) => {
+  document.addEventListener('click', (e: Event) => {
     const target = e.target as HTMLElement;
     const menuItemElement = target.closest('[data-menu-id]') as HTMLElement | null;
     if (!menuItemElement) return;
@@ -200,6 +227,27 @@ function activateMenuItem(menuId: string): void {
   if (item.htmlFile && item.sectionId) {
     showContents(item.linkId, item.sectionId, item.htmlFile);
   }
+
+  syncActiveNavigationState(item);
+  document.querySelector('.menu')?.classList.remove('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function syncActiveNavigationState(item: MenuItem): void {
+  const activeIds = new Set<string>([item.menuId]);
+
+  if (item.groupToShow === 'digitalSafety') {
+    activeIds.add('digitalSafetyMenu');
+  }
+
+  if (item.groupToShow === 'interesting') {
+    activeIds.add('interestingMenu');
+  }
+
+  document.querySelectorAll<HTMLElement>('[data-menu-id]').forEach((element) => {
+    const currentMenuId = element.dataset.menuId ?? '';
+    element.classList.toggle('is-active', activeIds.has(currentMenuId));
+  });
 }
 
 

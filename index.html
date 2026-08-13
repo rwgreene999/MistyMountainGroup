@@ -16,146 +16,140 @@
 
 
 <body>
-    <header>
+    <header class="site-header">
+        <div class="topbar">
+            <div class="brand-block">
+                <p class="eyebrow">Misty Mountain Group</p>
+                <h1>Misty Mountain Info</h1>
+                <p class="brand-summary">Digital safety guidance, practical privacy advice, and a few useful side trails.</p>
+            </div>
 
-        <div class="hamburger" onclick="toggleMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
+            <button class="hamburger" type="button" onclick="toggleMenu()" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
 
-        <nav>
-            <ul class="menu">
+        <nav class="primary-nav" aria-label="Primary navigation">
+            <div class="menu">
+                <button type="button" class="menu-item" id="homeLink" data-menu-id="home">Home</button>
 
-                <li class="menu-item" id="homeLink" data-menu-id="home">Home</li>
+                <div class="nav-group">
+                    <button type="button" class="menu-item" id="digitalSafetyMenuLink" data-menu-id="digitalSafetyMenu">Digital Safety</button>
+                    <div class="submenu">
+                        <button type="button" class="menu-item digitalSafetyStuff" id="scamsLink" data-menu-id="scams" data-menu-group="digitalSafety">Scams</button>
+                        <button type="button" class="menu-item digitalSafetyStuff" id="internetLink" data-menu-id="internet" data-menu-group="digitalSafety">Internet safety</button>
+                        <button type="button" class="menu-item digitalSafetyStuff" id="windowsLink" data-menu-id="windows" data-menu-group="digitalSafety">Windows security</button>
+                        <button type="button" class="menu-item digitalSafetyStuff" id="androidLink" data-menu-id="android" data-menu-group="digitalSafety">Android security</button>
+                        <button type="button" class="menu-item digitalSafetyStuff" id="linuxLink" data-menu-id="linux" data-menu-group="digitalSafety">Going to Linux</button>
+                    </div>
+                </div>
 
-                <li class="menu-item" id="digitalSafetyMenuLink" data-menu-id="digitalSafetyMenu">Digital Safety
-                    <ul class="submenu">
-                        <li class="menu-item digitalSafetyStuff" id="scamsLink" data-menu-id="scams" data-menu-group="digitalSafety">
-                            Scams</li>
-                        <li class="menu-item digitalSafetyStuff" id="internetLink"
-                            data-menu-id="internet" data-menu-group="digitalSafety">Internet  safety</li>
-                        <li class="menu-item digitalSafetyStuff" id="windowsLink" data-menu-id="windows" data-menu-group="digitalSafety">
-                            Windows security</li>
-                            <li class="menu-item digitalSafetyStuff" id="androidLink" data-menu-id="android" data-menu-group="digitalSafety">
-                            Android security</li>   
-                        <li class="menu-item digitalSafetyStuff" id="linuxLink" data-menu-id="linux" data-menu-group="digitalSafety">
-                            Going To Linux</li>
-                    </ul>
+                <div class="nav-group">
+                    <button type="button" class="menu-item" id="interestingMenuLink" data-menu-id="interestingMenu">Interesting</button>
+                    <div class="submenu">
+                        <button type="button" class="menu-item interestingThingsStuff" id="windowsToolsLink" data-menu-id="windowsTools" data-menu-group="interesting">Windows tools</button>
+                        <button type="button" class="menu-item interestingThingsStuff" id="interestingLink" data-menu-id="interesting" data-menu-group="interesting">Interesting things</button>
+                    </div>
+                </div>
 
-                </li>
-
-                <li class="menu-item" id="interestingMenuLink" data-menu-id="interestingMenu">
-                    Interesting
-                    <ul class="submenu">
-                        <li class="menu-item interestingThingsStuff" id="windowsToolsLink"
-                            data-menu-id="windowsTools" data-menu-group="interesting">Windows tools</li>
-                        <li class="menu-item interestingThingsStuff" id="interestingLink"
-                            data-menu-id="interesting" data-menu-group="interesting">Interesting Things</li>
-                    </ul>
-                </li>
-
-                <li class="menu-item personalStuff" id="aboutLink" data-menu-id="about" data-menu-group="personal">About Me</li>
-
-            </ul>
-
+                <button type="button" class="menu-item personalStuff" id="aboutLink" data-menu-id="about" data-menu-group="personal">About Me</button>
+            </div>
         </nav>
     </header>
 
-
-
-    <main>
+    <main class="site-main">
         <div id="home" class="content-section active">
-            <h1></h1>
-            <p>This web site is my ideas about the digital world. </p>
-            <p>Pick your area of interest above</p>
-            <p>Come back often to see what's new.</p>
-            
-            <hr>
-            <p>
-                Wander around this site, if you see this symbol &nbsp;
-        
+            <section class="hero-panel">
+                <div class="hero-copy">
+                    <p class="eyebrow">Start Here</p>
+                    <h2>Practical guides for staying safer online without drowning in jargon.</h2>
+                    <p>This site is organized like a reading hub instead of a pile of pages. Pick one topic, skim the essentials, and come back when you want the deeper version.</p>
+                    <div class="action-row">
+                        <button type="button" class="cta-button" data-menu-id="digitalSafetyMenu">Browse safety guides</button>
+                        <button type="button" class="cta-button cta-secondary" data-menu-id="interestingMenu">See useful tools</button>
+                    </div>
+                </div>
 
-                <span class="popup-trigger" data-popup="Example of a short message, with mouse hover, with phone click on and click off"></span>
+                <aside class="hero-aside">
+                    <div class="callout-card">
+                        <h3>How to read this site</h3>
+                        <p>Look for the short info marker <span class="popup-trigger" data-popup="Short definitions appear inline. They now work with hover and tap."></span> when a quick definition helps.</p>
+                        <p>When you see this style of button, it opens a larger note without sending you away:</p>
+                        <button id="showHowClicksWorkExtended" class="mybutton" type="button" onclick="showExtended('scamDetectionExtended')">Open an example note</button>
+                        <div id="scamDetectionExtended" class="extendedComment">
+                            This is a larger on-page explanation. Click the same button again to collapse it.
+                        </div>
+                    </div>
+                </aside>
+            </section>
 
-                <!-- <span class="popup-trigger">
-                    <span class="info-icon"></span>
-                    <span class="popup-content">
-                        Example of a short message, with mouse hover, with phone click on and click off
-                    </span>
-                </span> -->
-                near a geek word, it is a short description of that word, hover your mouse over it.  
-            </p>
-            <p>When you see this, it's a bigger click on click off message. :
-                <button id="showHowClicksWorkExtended" class="mybutton"
-                    onclick="showExtended('scamDetectionExtended')">ℹ️ Click me </button>
-            <div id="scamDetectionExtended" class="extendedComment">
-                Click me for extended comments. Click again to make this go away!
-            </div>
-            </p>
+            <section class="topics-panel">
+                <div class="section-heading">
+                    <p class="eyebrow">Popular Paths</p>
+                    <h3>Pick a lane and keep moving</h3>
+                </div>
 
+                <div class="topic-grid">
+                    <button type="button" class="topic-card" data-menu-id="scams">
+                        <span class="topic-kicker">Digital Safety</span>
+                        <strong>Scams</strong>
+                        <span>Learn what current scams look like and where the pressure points usually show up.</span>
+                    </button>
 
+                    <button type="button" class="topic-card" data-menu-id="internet">
+                        <span class="topic-kicker">Privacy</span>
+                        <strong>Internet safety</strong>
+                        <span>Understand tracking, surveillance, and the habits that reduce exposure.</span>
+                    </button>
 
-            <hr>
-            If you prefer different color pick: 
-            <button class="mybutton"
-            onclick="SetStyleMode('default')">
-            Default
-            </button>
-            <button class="mybutton"
-            onclick="SetStyleMode('light')">
-            White 
-            </button>
-            <button class="mybutton"
-            onclick="SetStyleMode('dark')">
-            Dark 
-            </button>
-            <button class="mybutton"
-            onclick="SetStyleMode('purple')">
-            Purple 
-            </button>
-            <button class="mybutton"
-            onclick="SetStyleMode('red')">
-            Red
-            </button>
-            <button class="mybutton"
-            onclick="SetStyleMode('green')">
-            Green
-            </button>
-            <button class="mybutton"
-            onclick="SetStyleMode('gold')">
-            Gold
-            </button>
-            
-            
-            <hr>
+                    <button type="button" class="topic-card" data-menu-id="windows">
+                        <span class="topic-kicker">Device Hardening</span>
+                        <strong>Windows security</strong>
+                        <span>Focus on the practical settings and tools that matter on a Windows system.</span>
+                    </button>
 
+                    <button type="button" class="topic-card" data-menu-id="android">
+                        <span class="topic-kicker">Phone Safety</span>
+                        <strong>Android security</strong>
+                        <span>Reduce risk on the device most people carry all day.</span>
+                    </button>
 
+                    <button type="button" class="topic-card" data-menu-id="linux">
+                        <span class="topic-kicker">Alternatives</span>
+                        <strong>Going to Linux</strong>
+                        <span>See when Linux makes sense as a privacy and control upgrade.</span>
+                    </button>
 
-            <p>
-                This is an active website as I discover more safety and interesting things on the
-                Internet. My serious focus is privacy and security related issues that I think everyone should know about in the
-                digital world.  But I also think we should have fun on the internet.
-            </p>
-            <p>
-                Don't expect to memorize this all at once. Read a small part and come back later for more information. 
-            </p>
+                    <button type="button" class="topic-card" data-menu-id="about">
+                        <span class="topic-kicker">Context</span>
+                        <strong>About Me</strong>
+                        <span>Read the background behind the opinions and the project itself.</span>
+                    </button>
+                </div>
+            </section>
 
+            <section class="utility-panel">
+                <div class="section-heading">
+                    <p class="eyebrow">Site Preferences</p>
+                    <h3>Use the look that works for you</h3>
+                </div>
 
+                <div class="theme-switcher" aria-label="Theme selection">
+                    <button class="mybutton" type="button" onclick="SetStyleMode('default')">System</button>
+                    <button class="mybutton" type="button" onclick="SetStyleMode('light')">Light</button>
+                    <button class="mybutton" type="button" onclick="SetStyleMode('dark')">Dark</button>
+                    <button class="mybutton" type="button" onclick="SetStyleMode('green')">Forest</button>
+                    <button class="mybutton" type="button" onclick="SetStyleMode('red')">Red</button>
+                    <button class="mybutton" type="button" onclick="SetStyleMode('gold')">Gold</button>
+                </div>
 
-
-
-            
-            
-
-            <hr>
-            <p>
-                If you have suggestions or observations or comments, email me from the 'About Me' menu above
-            </p>
-            <p>
-                There are no cookies or tracking on from this site. Unless you send me an email from the 'About me'
-                section I will never know you are here.
-            </p>
+                <div class="trust-strip">
+                    <p>This site is updated over time as new security issues, privacy concerns, and useful tools show up.</p>
+                    <p>There are no cookies or tracking here. If you contact me through the About page, that is the only time you deliberately share anything.</p>
+                </div>
+            </section>
         </div>
 
 
