@@ -105,16 +105,20 @@
     <div comment="BitLocker: Encrypt Your Drive Data ">
         <hr>
         <h3>BitLocker: Encrypt Your Drive Data</h3>
-        <p>BitLocker is a technology to secure your drive from someone who steals your computer.
-            If it is not turned on, you may want to consider turning it on.
-            If it is turned on (most likely on a new computer), you need to take action to secure your data.
-            This is because Microsoft has your Bitlocker keys, and if you ever need to reinstall Windows, you will need
-            those keys to access your data.
-
+        <p>
+            BitLocker is a technology to secure your drive from someone who steals your computer.  
+            A recently acquired computer will have this turned on for you, on older computers it's your choice.  A business issued computer most likely will have it managed by the IT department. 
+            </p>
+        <p>
+            If this is turned on for your personal computer, there are some things that you absolutely need to do to protect yourself.  The reason is Windows by default on personal computers encrypts these drives and then stores the key on your Windows account.  You need those keys if you ever have to get into your hard drive after a physical failure on your computer.
+            </p>
 
             <button id="showbitLocker" class="mybutton" onclick="showExtended('bitLocker')">
                 ℹ️ Learn About Bitlocker
             </button>
+
+
+
         <div id="bitLocker" class='extendedComment'>
             <p>BitLocker
 
@@ -138,11 +142,9 @@
                 <i>Is it necessary for you to use BitLocker?</i>
                 If your computer was issued to you by a corporation, BitLocker is probably already installed. This is
                 now your companies responsibility.
-                You most likely enter a password at the
-                power on of your computer before you really get started with a log in.
+                You most likely enter a password when you 
+                power on the computer before you really get started with a log in.
             </p>
-
-            <p> If you bought a computer recently Bitlocker may already be installed.</p>
 
             <p>
                 If this is your computer, you need to <b>consider the implications of BitLocker</b>.
@@ -150,8 +152,7 @@
                 consider implementing Bitlocker.
             </p>
 
-
-
+            <p> For personal computers, Bitlocker may already be installed.</p>
 
 
             <p>
@@ -180,9 +181,10 @@
             TL:DR;</p>
             <ul>
                 <li>You need to use your Microsoft account</li>
-                <li>Open Bitlocker Drive ( settings -> search for bitlocker ) </li>
+                <li>Open Bitlocker ( settings -> search for bitlocker ) </li>
                 <li>If BitLocker is active, get your recovery codes (see above) </li>
                 <li>If you decide to BitLocker your drive, this is your spot.</li>
+                <li>If you decide you want to remove BitLocker from your drive, this is your spot.</li>
                 <li>Remember to back up your recovery codes on paper (not on your machine).</li>
             </ul>
 
